@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EdgarPoe's Mushroom Substrate Calculator</title>
+        <style>
+            body {
+                font-family: monospace;
+                background: #ecf0f1;
+            }
+            h1 {
+                text-align: center;
+                font-size: 3em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 1em;
+            }
+            table, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                font-size: 1em;
+                margin: 3px;
+                padding-left: 7px;
+                padding-right: 7px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+            .tr1 {
+                border-top: 3px solid black;
+                border-collapse: collapse;
+                font-size: 1em;
+                margin: 3px;
+                padding-left: 7px;
+                padding-right: 7px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+            .tr2 {
+                border-top: 2px solid black;
+                border-collapse: collapse;
+                font-size: 1em;
+                margin: 3px;
+                padding-left: 7px;
+                padding-right: 7px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+            .td1 {
+                width: 35%;
+            }
+            .invis {
+                border-style: hidden;
+            }
+            .txcenter {
+                text-align: center;
+            }
+            .txcenter2 {
+                text-align: center;
+                font-size: 15px;
+            }
+            .txright {
+                text-align: right;
+            }
+            .txbox1 {
+                width: 50px;
+            }
+            .txbox2 {
+                width: 50px;
+                background-color: #858585;
+            }
+            .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 2px dotted black;
+            }
+            .tooltip .tiptext {
+                visibility: hidden;
+                width: 150px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+            }
+            .tooltip:hover .tiptext {
+                visibility: visible;
+            }
+            .twocol {
+                columns: 2;
+                -webkit-columns: 2;
+                -moz-columns: 2;
+            }
+            .table1 {
+                padding-right: 20px;
+                padding-left: 20px;
+                width: 1000px;
+            }
+            .textarea {
+                height: 150px;
+                width: 450px;
+            }
+            .row {
+	            display: flex;
+            }
+            .column {
+	            flex: 50%;
+	            padding: 10px;
+            }
+            hr.s1 {
+                height: 6px;
+                border-top: 3px solid black;
+                border-bottom: 2px solid black;
+            }
+            hr.s2 {
+                height: 6px;
+                border-top: 2px solid black;
+                border-bottom: 3px solid black;
+            }
+            hr.s3 {
+                height: 9px;
+                border-top: 4px solid black;
+                border-bottom: 2px solid black;
+            }
+            .tilt {
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+                height: 100px;
+                text-align: center;
+            }
+            .indent {
+                margin-left: 3%;
+                margin-right: 3%;
+            }
+            .indent2 {
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+            .footer {
+                max-width: 50%;
+                max-height: 50%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
+        <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+        <script>
+
+            function valTotal() {
+                var x = document.getElementById('t1total').value;
+                var y = 100;
+
+                if (Number(x) > y) {
+                    document.getElementById('t1total').style.backgroundColor = "#cf0911";
+                    return false;
+                } else {
+                        document.getElementById('t1total').style.backgroundColor = "";
+                    }
+            }
+
+            function myFun0() {
+                let a0 = document.getElementById('t1water').value;
+                let b0 = document.getElementById('t1ingr1').value;
+                let c0 = document.getElementById('t1ingr2').value;
+                let d0 = document.getElementById('t1ingr3').value;
+                let e0 = document.getElementById('t1ingr4').value;
+                let f0 = document.getElementById('t1ingr5').value;
+                let g0 = document.getElementById('t1ingr6').value;
+                let h0 = document.getElementById('t1total').value;
+                let i0 = document.getElementById('t2total').value;
+                let j0 = document.getElementById('t2water').value;
+                let k0 = document.getElementById('t2ingr1').value;
+                let l0 = document.getElementById('t2ingr2').value;
+                let m0 = document.getElementById('t2ingr3').value;
+                let n0 = document.getElementById('t2ingr4').value;
+                let o0 = document.getElementById('t2ingr5').value;
+                let p0 = document.getElementById('t2ingr6').value;
+                let q0 = document.getElementById('t3ing1a').value;
+                let r0 = document.getElementById('t3ing1b').value;
+                let s0 = document.getElementById('t3ing1c').value;
+                let t0 = document.getElementById('t3ing1d').value;
+                let u0 = document.getElementById('t3ing2a').value;
+                let v0 = document.getElementById('t3ing2b').value;
+                let w0 = document.getElementById('t3ing2c').value;
+                let x0 = document.getElementById('t3ing2d').value;
+                let q1 = document.getElementById('t3ing3a').value;
+                let r1 = document.getElementById('t3ing3b').value;
+                let s1 = document.getElementById('t3ing3c').value;
+                let t1 = document.getElementById('t3ing3d').value;
+                let u1 = document.getElementById('t3ing4a').value;
+                let v1 = document.getElementById('t3ing4b').value;
+                let w1 = document.getElementById('t3ing4c').value;
+                let x1 = document.getElementById('t3ing4d').value;
+                let q2 = document.getElementById('t3ing5a').value;
+                let r2 = document.getElementById('t3ing5b').value;
+                let s2 = document.getElementById('t3ing5c').value;
+                let t2 = document.getElementById('t3ing5d').value;
+                let u2 = document.getElementById('t3ing6a').value;
+                let v2 = document.getElementById('t3ing6b').value;
+                let w2 = document.getElementById('t3ing6c').value;
+                let x2 = document.getElementById('t3ing6d').value;
+                let a1 = document.getElementById('t4wrtot').value;
+                let b1 = document.getElementById('t4wring').value;
+                let c1 = document.getElementById('t4wrned').value;
+                let d1 = document.getElementById('t5total').value;
+                let e1 = document.getElementById('t5water').value;
+                let f1 = document.getElementById('t5ingr1').value;
+                let g1 = document.getElementById('t5ingr2').value;
+                let h1 = document.getElementById('t5ingr3').value;
+                let i1 = document.getElementById('t5ingr4').value;
+                let j1 = document.getElementById('t5ingr5').value;
+                let k1 = document.getElementById('t5ingr6').value;
+                let lime = document.getElementById('limeselect').value;
+                let limew = document.getElementById('t6water').value;
+                let limen = document.getElementById('t6lime1').value;
+
+                let sum01 = Number(a0) + Number(b0) + Number(c0) + Number(d0) + Number(e0) + Number(f0) + Number(g0);
+                let sum02 = Number(i0) * Number(a0) / 100;
+                let sum03 = Number(i0) * Number(b0) / 100;
+                let sum04 = Number(i0) * Number(c0) / 100;
+                let sum05 = Number(i0) * Number(d0) / 100;
+                let sum06 = Number(i0) * Number(e0) / 100;
+                let sum07 = Number(i0) * Number(f0) / 100;
+                let sum08 = Number(i0) * Number(g0) / 100;
+                let sum09 = ((Number(i0) * Number(b0) / 100) / ((100 - Number(r0)) * 0.01)) - (Number(i0) * Number(b0) / 100);
+                let sum10 = (Number(i0) * Number(b0) / 100) / ((100 - Number(r0)) * 0.01);
+                let sum11 = ((Number(i0) * Number(c0) / 100) / ((100 - Number(v0)) * 0.01)) - (Number(i0) * Number(c0) / 100);
+                let sum12 = (Number(i0) * Number(c0) / 100) / ((100 - Number(v0)) * 0.01);
+                let sum13 = ((Number(i0) * Number(d0) / 100) / ((100 - Number(r1)) * 0.01)) - (Number(i0) * Number(d0) / 100);
+                let sum14 = (Number(i0) * Number(d0) / 100) / ((100 - Number(r1)) * 0.01);
+                let sum15 = ((Number(i0) * Number(e0) / 100) / ((100 - Number(v1)) * 0.01)) - (Number(i0) * Number(e0) / 100);
+                let sum16 = (Number(i0) * Number(e0) / 100) / ((100 - Number(v1)) * 0.01);
+                let sum17 = ((Number(i0) * Number(f0) / 100) / ((100 - Number(r2)) * 0.01)) - (Number(i0) * Number(f0) / 100);
+                let sum18 = (Number(i0) * Number(f0) / 100) / ((100 - Number(r2)) * 0.01);
+                let sum19 = ((Number(i0) * Number(g0) / 100) / ((100 - Number(v2)) * 0.01)) - (Number(i0) * Number(g0) / 100);
+                let sum20 = (Number(i0) * Number(g0) / 100) / ((100 - Number(v2)) * 0.01);
+                let sum21 = ((Number(k0) / ((100 - Number(r0)) * 0.01)) - (Number(k0))) + ((Number(l0) / ((100 - Number(v0)) * 0.01)) - (Number(l0))) + ((Number(m0) / ((100 - Number(r1)) * 0.01)) - (Number(m0))) + ((Number(n0) / ((100 - Number(v1)) * 0.01)) - (Number(n0))) + ((Number(o0) / ((100 - Number(r2)) * 0.01)) - (Number(o0))) + ((Number(p0) / ((100 - Number(v2)) * 0.01)) - (Number(p0)));
+                let sum22 = ((Number(i0) * Number(a0)) / 100) - (((Number(k0) / ((100 - Number(r0)) * 0.01)) - (Number(k0))) + ((Number(l0) / ((100 - Number(v0)) * 0.01)) - (Number(l0))) + ((Number(m0) / ((100 - Number(r1)) * 0.01)) - (Number(m0))) + ((Number(n0) / ((100 - Number(v1)) * 0.01)) - (Number(n0))) + ((Number(o0) / ((100 - Number(r2)) * 0.01)) - (Number(o0))) + ((Number(p0) / ((100 - Number(v2)) * 0.01)) - (Number(p0))));
+                let sum23 = (Number(i0) * Number(a0) / 100) / 1000;
+                let sum24 = ((Number(i0) * Number(a0) / 100) / 1000) * Number(lime);
+
+                document.getElementById('t1total').value = sum01.toFixed(3);
+                valTotal();
+                document.getElementById('t2water').value = sum02.toFixed(3);
+                document.getElementById('t2ingr1').value = sum03.toFixed(3);
+                document.getElementById('t2ingr2').value = sum04.toFixed(3);
+                document.getElementById('t2ingr3').value = sum05.toFixed(3);
+                document.getElementById('t2ingr4').value = sum06.toFixed(3);
+                document.getElementById('t2ingr5').value = sum07.toFixed(3);
+                document.getElementById('t2ingr6').value = sum08.toFixed(3);
+                document.getElementById('t3ing1a').value = sum03.toFixed(3);
+                document.getElementById('t3ing1c').value = sum09.toFixed(3);
+                document.getElementById('t3ing1d').value = sum10.toFixed(3);
+                document.getElementById('t3ing2a').value = sum04.toFixed(3);
+                document.getElementById('t3ing2c').value = sum11.toFixed(3);
+                document.getElementById('t3ing2d').value = sum12.toFixed(3);
+                document.getElementById('t3ing3a').value = sum05.toFixed(3);
+                document.getElementById('t3ing3c').value = sum13.toFixed(3);
+                document.getElementById('t3ing3d').value = sum14.toFixed(3);
+                document.getElementById('t3ing4a').value = sum06.toFixed(3);
+                document.getElementById('t3ing4c').value = sum15.toFixed(3);
+                document.getElementById('t3ing4d').value = sum16.toFixed(3);
+                document.getElementById('t3ing5a').value = sum07.toFixed(3);
+                document.getElementById('t3ing5c').value = sum17.toFixed(3);
+                document.getElementById('t3ing5d').value = sum18.toFixed(3);
+                document.getElementById('t3ing6a').value = sum08.toFixed(3);
+                document.getElementById('t3ing6c').value = sum19.toFixed(3);
+                document.getElementById('t3ing6d').value = sum20.toFixed(3);
+                document.getElementById('t4wrtot').value = sum02.toFixed(3);
+                document.getElementById('t4wring').value = sum21.toFixed(3);
+                document.getElementById('t4wrned').value = sum22.toFixed(3);
+                document.getElementById('t5total').value = Number(i0).toFixed(3);
+                document.getElementById('t5water').value = sum22.toFixed(3);
+                document.getElementById('t5ingr1').value = sum10.toFixed(3);
+                document.getElementById('t5ingr2').value = sum12.toFixed(3);
+                document.getElementById('t5ingr3').value = sum14.toFixed(3);
+                document.getElementById('t5ingr4').value = sum16.toFixed(3);
+                document.getElementById('t5ingr5').value = sum18.toFixed(3);
+                document.getElementById('t5ingr6').value = sum20.toFixed(3);
+                document.getElementById('t6water').value = sum23.toFixed(2);
+                document.getElementById('t6lime1').value = sum24.toFixed(2);
+            }
+        </script>
+    </head>
+
+
+
+    <body>
+        <p><<< <a href="index.html">Back to index</a>
+        <br>>>> <a href="contact.html"><s>Contact form</s></a></p>
+        <h1>EdgarPoe's Mushroom Substrate Calculator</h1>
+        <hr class="s1">
+        <div class="indent2">
+            <p>This calculator was created to help cultivators calculate the proper amounts of substrate materials and water to create a substrate with a target <span class="tooltip">MC<span class="tiptext">Moisture content<br><br>This is the percentage of water in a substrate or material</span></span> after accounting for any water current present within the materials. This tool may be more useful for those who are creating their own substrate recipes with raw, unprocessed materials.</p>
+
+            <p><mark>If you notice any errors or have any comments or suggestions, please email me at <a href="mailto:edgarallanpoe1087@gmail.com">edgarallanpoe1087@gmail.com</a>, send me a PM on Shroomery (EdgarPoe), or use the <a href="contact.html"><s>contact form</s></a>.</mark></p>
+
+            <p>And please check my math at the bottom...</p>
+
+            <p><b>NOTE:</b> The primary goal of this calculator is to create substrate recipes. While there is a section on lime pasteurization, the calculator will still work if you choose to exclude that section entirely. The lime pasteurization section is there simply to help those who like to treat their substrates with lime.</p>
+
+            <p><i>This page is best viewed and used on desktop. It has not been optimized or designed to be used on mobile devices yet.</i></p>
+        </div>
+        <hr class="s2">
+
+        <div class="indent2">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#calc"><b>Substrate Calculator</b></a></li>
+                <li><a href="#instr">Calculator Instructions</a></li>
+                <li><a href="#comp">Calculator Components</a></li>
+                <li><a href="#exam">Example of Real World Use</li>
+                <li><a href="#sub">What Is a Substrate?</a></li>
+                <li><a href="#be">Biological Efficiency vs. Productivity Efficiency</a></li>
+                <li><a href="#mc">MC Test</a></li>
+                <li><a href="#fc">FC Test</a></li>
+                <li><a href="#lime">Lime Pasteurization</a></li>
+                <li><a href="#math">Math</a></li>
+                <li><a href="#hist">Site History & Future Plans</a></li>
+            </ul>
+        </div>
+        <hr>
+
+
+<!--Calculator-->
+        <div>
+            <h2 id="calc"><img src="img/img2.png" width="30px" height="30px"> Substrate Calculator</h2>
+            <div class="indent2">
+                <div class="indent2">
+                    <p><i>Hover your cursor over the numbers before each field for more information about that particular field.</i></p>
+                </div>
+                <table class="invis">
+                    <tr>
+                        <td>
+<!--Table 1: SUB RATIO-->
+                            <table style="float: left">
+                                <tr style="background-color: #ad0000">
+                                    <td colspan="2">
+                                        <div class="txcenter2">
+                                            <b style="color: white">SUB RATIO</b>
+                                        </div>
+                                    </td>
+                                </tr>
+<!--Table 1: SUB RATIO > Water (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[1]</sup>
+                                                <span class="tiptext">Enter the % of water you wish for your sub to have</span>
+                                            </div>
+                                            Water (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t1water" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+<!--Table 1: SUB RATIO > Ingredient 1 (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[2]</sup>
+                                                <span class="tiptext">Enter the % of the sub that will be taken up by your first ingredient</span>
+                                            </div>
+                                            Ingredient 1 (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t1ingr1" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+<!--Table 1: SUB RATIO > Ingredient 2 (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[3]</sup>
+                                                <span class="tiptext">Enter the % of the sub that will be taken up by your second ingredient</span>
+                                            </div>
+                                            Ingredient 2 (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t1ingr2" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+<!--Table 1: SUB RATIO > Ingredient 3 (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[4]</sup>
+                                                <span class="tiptext">Enter the % of the sub that will be taken up by your third ingredient</span>
+                                            </div>
+                                            Ingredient 3 (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t1ingr3" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+<!--Table 1: SUB RATIO > Ingredient 4 (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[5]</sup>
+                                                <span class="tiptext">Enter the % of the sub that will be taken up by your fourth ingredient</span>
+                                            </div>
+                                            Ingredient 4 (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t1ingr4" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+    <!--Table 1: SUB RATIO > Ingredient 5 (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[6]</sup>
+                                                <span class="tiptext">Enter the % of the sub that will be taken up by your fifth ingredient</span>
+                                            </div>
+                                            Ingredient 5 (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t1ingr5" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+    <!--Table 1: SUB RATIO > Ingredient 6 (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[7]</sup>
+                                                <span class="tiptext">Enter the % of the sub that will be taken up by your sixth ingredient</span>
+                                            </div>
+                                            Ingredient 6 (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t1ingr6" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+    <!--Table 1: SUB RATIO > TOTAL (%)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[8]</sup>
+                                                <span class="tiptext">Total sum of the % above<br><br>This number should equal 100</span>
+                                            </div>
+                                            TOTAL (%)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t1total" oninput="valTotal()" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+    <!--Table 2: SUBSTRATE BREAKDOWN-->
+                            <table style="float: left">
+                                <tr style="background-color:#ad0000">
+                                    <td colspan="2">
+                                        <div class="txcenter2">
+                                            <b style="color:white">SUB BREAKDOWN</b>
+                                        </div>
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Final sub weight (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[9]</sup>
+                                                <span class="tiptext">Enter the total weight of the sub with all ingredients and water combined</span>
+                                            </div>
+                                            Total sub weight (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t2total" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Water (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[10]</sup>
+                                                <span class="tiptext">This is how much water your sub will have</span>
+                                            </div>
+                                            Water (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t2water" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Ingredient 1 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[11]</sup>
+                                                <span class="tiptext">This is how much of your first ingredient the sub will have</span>
+                                            </div>
+                                            Ingredient 1 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t2ingr1" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Ingredient 2 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[12]</sup>
+                                                <span class="tiptext">This is how much of your second ingredient the sub will have</span>
+                                            </div>
+                                            Ingredient 2 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t2ingr2" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Ingredient 3 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[13]</sup>
+                                                <span class="tiptext">This is how much of your third ingredient the sub will have</span>
+                                            </div>
+                                            Ingredient 3 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t2ingr3" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Ingredient 4 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[14]</sup>
+                                                <span class="tiptext">This is how much of your fourth ingredient the sub will have</span>
+                                            </div>
+                                            Ingredient 4 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t2ingr4" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Ingredient 5 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[15]</sup>
+                                                <span class="tiptext">This is how much of your fifth ingredient the sub will have</span>
+                                            </div>
+                                            Ingredient 5 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t2ingr5" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 2: SUBSTRATE BREAKDOWN > Ingredient 6 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[16]</sup>
+                                                <span class="tiptext">This is how much of your sixth ingredient the sub will have</span>
+                                            </div>
+                                            Ingredient 6 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t2ingr6" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+    <!--Table 3: INGREDIENT MC PROFILES-->
+                            <table style="float: left">
+                                <tr style="background-color:#ad0000">
+                                    <td colspan="5">
+                                        <div class="txcenter2">
+                                            <b style="color:white">INGREDIENT MC PROFILES</b>
+                                        </div>
+                                    </td>
+                                </tr>
+    <!--Table 3: INGREDIENT MC PROFILES > Data columns-->
+                                <tr>
+                                    <td>Ingredient</td>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[17]</sup>
+                                                <span class="tiptext">These are the dry weights of your ingredients that the sub will have</span>
+                                            </div>
+                                            <p class="tilt">Dry weight (g)</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[18]</sup>
+                                                <span class="tiptext">Enter the MC% from your MC tests for each of your ingredients</span>
+                                            </div>
+                                            <p class="tilt">MC (%)</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[19]</sup>
+                                                <span class="tiptext">These are the amounts of water currently present in the wet weights of your ingredients</span>
+                                            </div>
+                                            <p class="tilt">MC (g)</p>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[20]</sup>
+                                                <span class="tiptext">These are the true amounts of each of your ingredients you should weigh out and add to the sub</span>
+                                            </div>
+                                            <p class="tilt">Wet weight (g)</p>
+                                        </div>
+                                    </td>
+                                </tr>
+    <!--Table 3: INGREDIENT MC PROGILES > Ingredient 1-->
+                                <tr>
+                                    <td>Ingredient 1</td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing1a" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t3ing1b" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing1c" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing1d" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 3: INGREDIENT MC PROGILES > Ingredient 2-->
+                                <tr>
+                                    <td>Ingredient 2</td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing2a" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t3ing2b" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing2c" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing2d" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 3: INGREDIENT MC PROGILES > Ingredient 3-->
+                                <tr>
+                                    <td>Ingredient 3</td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing3a" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t3ing3b" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing3c" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing3d" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 3: INGREDIENT MC PROGILES > Ingredient 4-->
+                                <tr>
+                                    <td>Ingredient 4</td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing4a" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t3ing4b" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing4c" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing4d" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 3: INGREDIENT MC PROGILES > Ingredient 5-->
+                                <tr>
+                                    <td>Ingredient 5</td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing5a" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t3ing5b" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing5c" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing5d" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 3: INGREDIENT MC PROGILES > Ingredient 6-->
+                                <tr>
+                                    <td>Ingredient 6</td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing6a" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox1" type="text"id="t3ing6b" oninput="myFun0()" placeholder="0">
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing6c" placeholder="0" readonly>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t3ing6d" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+    <!--Table 4: WATER-->
+                            <table style="float: left">
+                                <tr style="background-color:#ad0000">
+                                    <td colspan="2">
+                                        <div class="txcenter2">
+                                            <b style="color:white">WATER PROFILE</b>
+                                        </div>
+                                    </td>
+                                </tr>
+    <!--Table 4: WATER > Total water needed (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[21]</sup>
+                                                <span class="tiptext">This is the total amount of water the sub needs to achieve your target ratio</span>
+                                            </div>
+                                            Total water needed (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t4wrtot" placeholder="0" readony>
+                                    </td>
+                                </tr>
+    <!--Table 4: WATER > Water in ingredients (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[22]</sup>
+                                                <span class="tiptext">This is the total amount of water currently present in your ingredients</span>
+                                            </div>
+                                            Water in ingredients (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t4wring" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 4: WATER > Actual water needed (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[23]</sup>
+                                                <span class="tiptext">This is the amount of water you need after accounting for water present in your ingredients to achieve your target ratio</span>
+                                            </div>
+                                            Actual water needed (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t4wrned" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+
+
+    <!--Table 6: LIME PASTEURIZATION-->
+                                <tr style="background-color:#ad0000">
+                                    <td colspan="2">
+                                        <div class="txcenter2">
+                                            <b style="color:white">LIME PASTEURIZATION</b>
+                                        </div>
+                                    </td>
+                                </tr>
+    <!--Table 6: LIME PASTEURIZATION > Lime concentration (g/L)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[32]</sup>
+                                                <span class="tiptext">Select your desired lime concentration</span>
+                                            </div>
+                                            Lime concentration (g/L)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select id="limeselect" oninput="myFun0()">
+                                            <option id="select">---</option>
+                                            <option id="2g1L" value="2">2g/L</option>
+                                            <option id="3g1L" value="3">3g/L</option>
+                                            <option id="4g1L" value="4">4g/L</option>
+                                            <option id="5g1L" value="5">5g/L</option>
+                                        </select>
+                                    </td>
+                                </tr>
+    <!--Table 6: LIME PASTEURIZATION > Water in sub (L)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[33]</sup>
+                                                <span class="tiptext">This is the volume of water the sub will need to achieve your target ratio</span>
+                                            </div>
+                                            Water in sub (L)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t6water" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 6: LIME PASTEURIZATION > Lime needed (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[34]</sup>
+                                                <span class="tiptext">This is the amount of lime you will need to acheive your targeted lime ratio</span>
+                                            </div>
+                                            Lime needed (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t6lime1" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+    <!--Table 5: FINAL RECIPE-->
+                            <table style="float: left">
+                                <tr style="background-color:#ad0000">
+                                    <td colspan="2">
+                                        <div class="txcenter2">
+                                            <b style="color:white">FINAL RECIPE</b>
+                                        </div>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Total sub weight (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[24]</sup>
+                                                <span class="tiptext">This is the total weight of the sub with all ingredients and water combined</span>
+                                            </div>
+                                            Total sub weight (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5total" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Water (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[25]</sup>
+                                                <span class="tiptext">This is the amount of water you will add to the sub to achieve your target ratio</span>
+                                            </div>
+                                            Water (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5water" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Ingredient 1 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[26]</sup>
+                                                <span class="tiptext">This is the amount of your first ingredient you will add to the sub</span>
+                                            </div>
+                                            Ingredient 1 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5ingr1" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Ingredient 2 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[27]</sup>
+                                                <span class="tiptext">This is amount of your second ingredient you will add to the sub</span>
+                                            </div>
+                                            Ingredient 2 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5ingr2" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Ingredient 3 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[28]</sup>
+                                                <span class="tiptext">This is the amount of your third ingredient you will add to the sub</span>
+                                            </div>
+                                            Ingredient 3 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5ingr3" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Ingredient 4 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[29]</sup>
+                                                <span class="tiptext">This is the amount of your fourth ingredient you will add to the sub</span>
+                                            </div>
+                                            Ingredient 4 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5ingr4" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Ingredient 5 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[30]</sup>
+                                                <span class="tiptext">This is the amount of your fifth ingredient you will add to the sub</span>
+                                            </div>
+                                            Ingredient 5 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5ingr5" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+    <!--Table 5: FINAL RECIPE > Ingredient 6 (g)-->
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <div class="tooltip"><sup>[31]</sup>
+                                                <span class="tiptext">This is the amount of your sixth ingredient you will add to the sub</span>
+                                            </div>
+                                            Ingredient 6 (g)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input class="txbox2" type="text"id="t5ingr6" placeholder="0" readonly>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+
+
+<!--Calculator Instructions-->
+        <div class="indent2">
+            <h2 id="instr"><img src="img/img2.png" width="30px" height="30px"> Calculator Instructions</h2>
+            <div class="indent">
+                <table style="margin-right: 50px" class="table1">
+                    <tr>
+                        <td>
+                            <p><b>NOTES:</b></p>
+                            <ul>
+                                <li>Metric units are used as the basis for this calculator. If you wish to use another system of measurement, you will have to make the conversions yourself.</li>
+                                <li>You <b>must</b> perform an MC test on each of your ingredients in order for the calculator to be useful. Assuming that your ingredients have no water in them will cause the calculator to output a recipe that will make the sub too wet. To learn more about the MC test, visit the <a href="#mc">"MC Test" section</a> for more information.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <ol>
+                    <li>Enter the ratios of water and ingredients you would like for your substrate to have in the first table.</li>
+                    <ul>
+                        <li><i>Make sure that the TOTAL (%) field at the bottom of the first table equals 100. If it is over 100, the field will turn red until you correct the error. If you continue with your calculations while the TOTAL (%) is greater or lesser than 100, you will end up creating a substrate that is either too high above or too low below your target MC.</i></li>
+                    </ul>
+                    <li>Enter the target weight for your substrate in the second table.</li>
+                    <li>Enter the MC% for each of your ingredients in the third table.</li>
+                    <li><i>(Optional)</i> Lime pasteurization: choose your desired concentration from the option menu of the fifth table. The figure in the last field of this table is the amount of lime you will need for your substrate.</li>
+                    <li>The last table lists the recipe that you will follow to create a substrate at your target ratio.</li>
+                </ol>
+            </div>
+        </div>
+        <hr>
+
+
+<!--Calculator Components-->
+        <div class="indent2">
+            <h2 id="comp"><img src="img/img2.png" width="30px" height="30px"> Calculator Components</h2>
+            <div class="indent">
+                <table class="table1">
+                    <tr>
+                        <td class="table1" style="background-color:#ad0000; color:white">
+                            <p class="txcenter2">Table 1: <b>SUB RATIO</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table1">
+                            <p>This table pertains to what percentages the water and ingredients will make up your substrate.</p>
+                            <ol>
+                                <li><b>Water (%):</b> This represents the portion of the substrate that will be taken up by water.</li>
+                                <li><b>Ingredient 1 (%):</b> This is the percentage of the substrate that will be taken by the first ingredient.</li>
+                                <li><b>Ingredient 2 (%):</b> This is the percentage of the substrate that will be taken by the second ingredient.</li>
+                                <li><b>Ingredient 3 (%):</b> This is the percentage of the substrate that will be taken by the third ingredient.</li>
+                                <li><b>Ingredient 4 (%):</b> This is the percentage of the substrate that will be taken by the fourth ingredient.</li>
+                                <li><b>Ingredient 5 (%):</b> This is the percentage of the substrate that will be taken by the fifth ingredient.</li>
+                                <li><b>Ingredient 6 (%):</b> This is the percentage of the substrate that will be taken by the sixth ingredient.</li>
+                                <li><b>TOTAL (%):</b> This is the sum of the numbers above.</li>
+                            </ol>
+                            <p><i>Make sure that the TOTAL (%) equals 100. If it is over 100, the field will turn red. You must adjust your ratios so that it equals 100. If you proceed to use the calculator with this number greater or lesser than 100, the recipe that is created will have a skewed water ratio.</i></p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table1">
+                    <tr>
+                        <td class="table1" style="background-color:#ad0000; color:white">
+                            <p class="txcenter2">Table 2: <b>SUB BREAKDOWN</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table1">
+                            <p>This table shows you the target weight of the water and each ingredient that your substrate will have.</p>
+                            <ol start="9">
+                                <li><b>Total sub weight (g):</b> This is the final weight of your substrate with all ingredients and water combined.</li>
+                                <li><b>Water (g):</b> This is the total amount of water that will be in your substrate.</li>
+                                <li><b>Ingredient 1 (g):</b> This is the total amount of your first ingredient that will be in your substrate.</li>
+                                <li><b>Ingredient 2 (g):</b> This is the total amount of your second ingredient that will be in your substrate.</li>
+                                <li><b>Ingredient 3 (g):</b> This is the total amount of your third ingredient that will be in your substrate.</li>
+                                <li><b>Ingredient 4 (g):</b> This is the total amount of your fourth ingredient that will be in your substrate.</li>
+                                <li><b>Ingredient 5 (g):</b> This is the total amount of your fifth ingredient that will be in your substrate.</li>
+                                <li><b>Ingredient 6 (g):</b> This is the total amount of your sixth ingredient that will be in your substrate.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table1">
+                    <tr>
+                        <td class="table1" style="background-color:#ad0000; color:white">
+                            <p class="txcenter2">Table 3: <b>INGREDIENT MC PROFILES</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table1">
+                            <p>This table shows you a profile of the moisture content of each of your ingredients.</p>
+                            <ol start="17">
+                                <li><b>Dry weight (g):</b> This is the target weight of each of your ingredients.</li>
+                                <li><b>Initial MC (%):</b> This is the MC% of each of your ingredients.</li>
+                                <li><b>Initial MC (g):</b> This is the amount of water currently present in each of your ingredients.</li>
+                                <li><b>Wet weight (g):</b> This is the amount of each of your ingredients that you will add to your substrate.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table1">
+                    <tr>
+                        <td class="table1" style="background-color:#ad0000; color:white">
+                            <p class="txcenter2">Table 4: <b>WATER PROFILE</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table1">
+                            <p>This table shows you a breakdown of the water in your substrate.</p>
+                            <ol start="21">
+                                <li><b>Total water needed (g):</b> This is the total amount of water that your substrate will need in order to reach your target ratio.</li>
+                                <li><b>Water in ingredients (g):</b> This is the total amount of water currently present in your ingredients.</li>
+                                <li><b>Actual water needed (g):</b> This is the total amount of water you will need to add to your substrate after the water present in your ingredients has been taken into account.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table1">
+                    <tr>
+                        <td class="table1" style="background-color:#ad0000; color:white">
+                            <p class="txcenter2">Table 5: <b>FINAL RECIPE</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table1">
+                            <p>This table shows you the final recipe for you to follow.</p>
+                            <ol start="24">
+                                <li><b>Total sub weight (g):</b> This is the final weight of your substrate with all ingredients and water combined.</li>
+                                <li><b>Water (g):</b> This is the amount of water that will be in your substrate..</li>
+                                <li><b>Ingredient 1 (g):</b> This is the amount of your first ingredient to add to your substrate.</li>
+                                <li><b>Ingredient 2 (g):</b> This is the amount of your second ingredient to add to your substrate.</li>
+                                <li><b>Ingredient 3 (g):</b> This is the amount of your third ingredient tp add to your substrate.</li>
+                                <li><b>Ingredient 4 (g):</b> This is the amount of your fourth ingredient to add to your substrate.</li>
+                                <li><b>Ingredient 5 (g):</b> This is the amount of your fifth ingredient to add to your substrate.</li>
+                                <li><b>Ingredient 6 (g):</b> This is the amount of your sixth ingredient to add to your substrate.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table1">
+                    <tr>
+                        <td class="table1" style="background-color:#ad0000; color:white">
+                            <p class="txcenter2">Table 6: <b>LIME PASTEURIZATION</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table1">
+                            <p>This table shows you calculations for lime pasteuriation.</p>
+                            <ol start="32">
+                                <li><b>Lime concentration (g/L):</b> This is the amount of lime per liter of water that you wish to use to treat your substrate.</li>
+                                <li><b>Water in sub (L):</b> This is the total amount of water that will be in your substrate.</li>
+                                <li><b>Lime needed (g):</b> This is the amount of lime to add to your water.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+
+
+<!--Example of Real World Use-->
+        <div class="indent2">
+            <h2 id="exam"><img src="img/img2.png" width="30px" height="30px"> Example of Real World Use</h2>
+            <div class="indent">
+                <p>The calculator works on a combination of simple equations pertaining to each ingredient. A check of the math will prove its efficacy, but its true value is proven in its real-world application. In this section, I will present a simple example of how the figures listed by the calculator are applied to create a substrate.</p><!--include a section on checking the MC of the sub by performing an MC test on a 100g sample of the sub-->
+
+                <table class="table1">
+                    <tr>
+                        <td class="table1">
+                            <h3><i>Storing your ingredients</i></h3>
+                            <p>To reduce the amount of moisture absorbed by your ingredients from the surrounding environment, materials used for making substrates should be stored in containers that are as airtight as possible. Materials left out in the open air will inevitably absorb moisture from its surroundings, skewing your MC tests and making them unreliable. Keeping materials in closed containers will also help to reduce the number of MC tests you have to perform. Materials kept in a closed container for an extended period of time will balance out the moisture already contained within the container by passing it from wetter areas to drier areas, making your MC tests more reliable.</p>
+
+                            <p>For example, a pile of sawdust or bale of straw left outdoors where it will be exposed to the elements will see a dramatic rise and fall in moisture content due to rain, humidity, and drought. That same material stored in an airtight 5 gallon bucket will maintain a constant moiture content without any significant changes over a long period of time.</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <img src="img/4.jpg">
+
+                <p>There will be three ingredients used in this example substrate, as shown in the photo above: wood chips (rear), HWFP (left), and rice bran (right).</p>
+
+                <p>I want to create a substrate with the following ratio and weights:</p>
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td></td>
+                        <td class="txcenter"><b>%</b></td>
+                        <td class="txcenter"><b>g</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Total sub weight</b></td>
+                        <td>---</td>
+                        <td>3000g</td>
+                    </tr>
+                    <tr>
+                        <td>Water</td>
+                        <td>60%</td>
+                        <td>1800g</td>
+                    </tr>
+                    <tr>
+                        <td>Wood chips</td>
+                        <td>20%</td>
+                        <td>600g</td>
+                    </tr>
+                    <tr>
+                        <td>HWFP</td>
+                        <td>15%</td>
+                        <td>450g</td>
+                    </tr>
+                    <tr>
+                        <td>Rice bran</td>
+                        <td>5%</td>
+                        <td>150g</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+
+                <img src="img/1.jpg">
+                <h3>Wood chips</h3>
+                <p>The wood chips used in this example come from my property. It is a mix of red oak, pecan, and a branch or two of chinaberry. The branches were stripped of any leaves and any twigs smaller than the thickness of my index finger before being fed through a cheap wood chipper. The chips were collected and laid out in the sun to dry for a few days, after which they were collected again and stored in a 5 gallon bucket for a week before use. This week-long "rest" is intended to help balance out any significant moisture differences in the bucket before performing an MC test. This is an important task when working with raw materials such as wood chips.</p>
+                <br>
+                <br>
+
+                <img src="img/2.jpg">
+                <h3>HWFP</h3>
+                <p>HWFP (hardwood fuel pellets) are a staple in wood-based substrates. Typically fuel pellets used for heating are used for substrates, but cooking pellets are just as good, albeit a bit more expensive. The pellets used in this example are made of oak, though the label doesn't specify the exact species. Be aware that many heating fuel pellets may contain or be primarily made of softwood such as pine or cypress. Some mushroom species can grow perfectly fine on this kind of wood, but other species have difficulty. When picking fuel pellets, look for those made from hardwoods. Usually I omit HWFP from MC tests as long as they are still stiff and offer a decent amount of resistance when attempting to break in half. This is a personal litmus test and not a definitive indicator of moisture content. On average, HWFP contain a moisture content of around 1-5%, which is enough water to throw your target moisture content off by a percentage or two. This is a perfectly reasonable margin of error, in my personal opinion. With that said, my decision to omit HWFP from MC tests is entirely personal.</p>
+                <br>
+                <br>
+
+                <img src="img/3.jpg">
+                <h3>Rice bran</h3>
+                <p>Rice bran (and other brans) are used as a nutritious additive to improve colonization, fruiting yeilds, and fruit quality. This is due to the increase of nitrogen and starch provided by the bran, which are essential for protein and energy production and many important mycelial cellular functions. There are many different types of supplements that can be added to substrates to provide a boost in overall nutrition, such as bran, manure, coffee grounds, and seed hulls. Grain can be used as a supplement as well, but it is more efficient to add grain only as colonized spawn. This will not only boost the nitrogen in the substrate, but it will also reduce the colonization time by providing the mycelium more "jumping off" points and reduce the risk of contamination. It's the epitome of killing two birds with one stone. The availability of supplements to you may be different than they are for me. Rice bran is the cheapest option available to me. An MC test should always be performed on bran of any kind. Even at such a small ratio (5% in this example), there may be enough water contained in it that it can cause the substrate to be too moist.</p>
+                <br>
+                <br>
+
+                <img src="img/5.jpg" height="auto" width="12%">
+                <h3>Water</h3>
+                <p>Water is perhaps the most important ingredient in a substrate. Too much or too little will become a primary factor in the substrate's failure. It is crucial that the appropriate amount of water is added. It is because of its importance in substrate composition that this calculator was created. Many people recommend using distilled water for substrates since it is pH neutral and free of any chemicals that may harm or stunt mycelium. The water used in this example is well water from my property. The water was tested some years ago, and I doubt the mineral profile has changed by much. There are trace amounts of calcium, potassium, and sulfur, all of which are trace minerals used by the mycelium. The pH of the water is also neutral. I also included about 10mL of oat soak water that was drained from some oats used in spawn production (this is the cause for the yellow color of the water). This is a personal choice that may or may not have any effect on the substrate's overall quality. I recognize it as a bias I have, as I'm sure the quality of my crops would not be negatively affected if I omitted this addition. It's like wearing your lucky Boston Red Sox jersey while watching the World Series. You feel like it helps.</p>
+
+                <p>The first task to be completed is performing MC tests on all ingredients. As stated above, the HWFP will be omitted from the test. Here are the results after testing the wood chips and rice bran:</p>
+                
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td></td>
+                        <td class="tilt"><b>Dry weight needed (g)</b></td>
+                        <td class="tilt"><b>MC (%)</b></td>
+                        <td class="tilt"><b>MC (g)</b></td>
+                        <td class="tilt"><b>Wet weight needed (g)</b></td>
+                    </tr>
+                    <tr>
+                        <td>Wood chips</td>
+                        <td>600g</td>
+                        <td>16%</td>
+                        <td>114.286g</td>
+                        <td>714.286g</td>
+                    </tr>
+                    <tr>
+                        <td>Rice bran</td>
+                        <td>150g</td>
+                        <td>9%</td>
+                        <td>14.835g</td>
+                        <td>164.835g</td>
+                    </tr>
+                </table>
+
+                <p>As expected, there was a high water content in the wood chips. Since there is 16g of water in every 100g of wood chips, 600g of chips would actually be 96g water and 504g wood. 96g of water is not an insignificant amount. This will significantly increase the moisture content of the entire substrate while reducing the overall weight of the dry ingredients. This is the primary reason MC tests are important. Once the MC% has been plugged into the calculator, it outputs the actual weight of the wood chips that you should weigh out so that you have 600g of wood. The remaining weight is water, which is deducted from the 1800g of water called for by the recipe.</p>
+
+                <p>After weighing out the ingredients, they are ready to be mixed together. The images in this section have already been weighed out for this substrate.</p>
+                <br>
+                <br>
+                <img src="img/6.jpg">
+                <p><i>Ingredients added to filter bag</i></p>
+                <br>
+                <img src="img/7.jpg">
+                <p><i>Ingredients shaken to mix</i></p>
+                <br>
+                <img src="img/8.jpg">
+                <p><i>Water added and bag taped. Ready for sterilization</i></p>
+
+                <p>After the water has been added and mixed, the bag is folded and taped to protect the filter during sterilization. If using a pressure cooker to sterilize, you can keep the tape on the bag after sterilization until you're ready to spawn. If tyndallizing your substrate, remove the tape and unfold the bag after each steaming session before it cools as the adhesive will be soft while it's warm. This allows for proper gas exchange which is crucial for the tyndallization process.</p>
+
+                <p>Although lime pasteurization has a section on the calculator, I didn't include it in this example. This is because lime pasteurization would not be an effective treatment for this block. This is solely due to the addition of the rice bran. As mentioned above, the rice bran is very nutritious and attractive to contaminants and may harbor endospores that are resistant to pastuerization (both heat and chemical methods) as well as boiling water. The substrate would have to be sterilized by pressure and steam or tyndallized to destroy all living organisms and endospores.</p>
+
+                <p>And that's it. On paper, it seems a little complicated, but when put into practice, it's pretty straightforward and easy.</p>
+            </div>
+        </div>
+        <hr>
+
+
+<!--What Is a Substrate?-->
+        <div class="indent2">
+            <h2 id="sub"><img src="img/img2.png" width="30px" height="30px"> What Is a Substrate?</h2>
+            <div class="indent">
+                <table class="table1">
+                    <tr>
+                        <td class="table1">
+                        <p><i>If you are just beginning your cultivation journey or are interested in beginning, I recommend picking up <u>Growing Gourmet and Medicinal Mushrooms</u> by Paul Stamets. There is much more in-depth information about not only substrates, but the entire mushroom cultivation process. The information provided by it is worth its weight in gold.</i></p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>A substrate is the final stage of the mushroom cultivation process. It is composed of materials that mycelium draws its nutrients and energy from. It can be made of a single material, or a combination of materials to improve overall nutrient value and fruiting yields.</p>
+
+                <p>Examples of substrate materials:</p>
+                <ul>
+                    <li>Sawdust</li>
+                    <li>HWFP</li>
+                    <li>Soybean hulls</li>
+                    <li>Cottonseed hulls</li>
+                    <li>Straw</li>
+                    <li>Grains</li>
+                    <li>Hay</li>
+                    <li>Spent moonshine mash</li>
+                    <li>Cardboard</li>
+                    <li>Coffee grounds</li>
+                    <li>Compost</li>
+                    <li>Manure</li>
+                    <li>Rice bran</li>
+                    <li>Peanut hulls</li>
+                    <li>Biomass pellets</li>
+                    <li>Corn husks</li>
+                </ul>
+
+                <p>Creating your own substrate recipes is a great way to experiment with your cultures to see what kinds of yields you can achieve. You can try out cheaper alternatives to certain ingredients, test different supplements, or test out a new material's yield potential.</p>
+
+                <p>There are several important factors that should be considered when creating a substrate. The following is not an exhaustive list of every single factor, but just five that I identify as the most critical:</p>
+                <ul>
+                    <li>Substrate weight</li>
+                    <li>Nutritive value</li>
+                    <li>Composition matrix</li>
+                    <li>Moisture content</li>
+                    <li>pH</li>
+                </ul>
+                <br>
+
+                <h3>Substrate weight</h3>
+                <p>In order to fruit, mushrooms need mass and energy. These are provided by the substrate. A substrate block needs to be a certain weight to be able to produce mushrooms. In the mushroom industry, cultivators evaluate the quality of their straings and yields using an equation called the biological efficiency, or BE. It is a ratio of the amount of fresh mushrooms harvested to the weight of the substrate's dry ingredients. In my opinion, there is a better metric by which we can evaluate efficiency (more on this in the <a href="#be">biological efficiency</a> section). The weight of substrate blocks have a direct correlation to the quantity and quality of your fruits.</p>
+                
+                <p>For bags, I make blocks that are a minimum of 2.5kg, and for buckets I make them 4kg. Given the right ingredients, spawing ratio, and incubation conditions, these blocks will take most oyster species about a month to fully colonize.</p>
+                <br>
+
+                <h3>Nutritive value</h3>
+                <p>A substrate made entirely of wood-based material is a suitable substrate for wood-loving species. There is not a lot of dense nutrients in a substrate with that composition, but with a high spawning ratio, the supplementation will come from the spawn itself. If you are looking to conserve spawn by adding as little as you can get away with to the substrate, you would do yourself a favor by adding a supplement. Many things can act as supplements, however not all mushrooms enjoy the same ones. Manure is great for agaricus species, but oysters would do better with an alternative, such as rice bran. One of my future experiments is seeing what kind of results I get from oyster mushrooms growing in different substrates by using some of the aged chicken manure from the floor of my chicken coop in different ratios.</p>
+
+                <p>The most commonly used supplements are found as horse feed, such as bran and whole grains. As mentioned above, grains are best added as spawn and not as a separate supplement. Another commonly used supplement is seed hulls. Soybean and cottonseed hulls are frequently used in master's mixes, a substrate recipe calling for 50:50 HWFP:seed hulls by weight. For many beginners, coffee grounds are an easily attainable supplement that are dense in nitrogen and other micronutrients. Coffee is very susceptible to contamination, so strict adherence to sterile technique is required.</p>
+                
+                <p>No matter which way you approach supplementation additives, adding something to the substrate will improve your fruiting yields and fruit quality. However, nutritious substrates are not just attractive to mushroom mycelium. Other microorganisms will compete with your culture and potentially overtake it if the substrate wasn't sterilized correctly or an improper sterilization process was used. Substrates made without supplements can be sterilized, tyndallized, or pasteurized. Those made with supplements (such as the substrate made in the example above) must be sterilized or tyndallized.</p>
+                <br>
+
+                <h3>Composition matrix</h3>
+                <p>The composition matrix is the density and physical makeup of the substrate, specifically the particle size of the ingredients. Substrates made entirely of powdered or granular materials will be difficult for the mycelium to colonize, even if it is nutritious and sterile. For most cultivated mushrooms, they enjoy a substrate made up of a mix of large and small particles. This allows oxygen to penetrate into the deeper parts of the substrate for the mycelium to breathe. Many species tolerate higher CO2 levels during their colonization stage, but they cannot do without oxygen entirely. Providing the oxygen through the matrix of the substrate is the easiest and most efficient way. As in the example above, the wood chips provide the larger air pockets for oxygen to penetrate than what would be provided by the HWFP and rice bran alone. It also prevents the substrate from becoming too compact.</p>
+                <br>
+
+                <h3>Moisture content</h3>
+                <p>This factor is something that has been discussed many times on this page so far, and for good reason. In my opinion, moisture content is something that can make or break a substrate regardless of ingredients or supplementation. A substrate that is too wet is a breeding ground for any bacteria that makes their way into your block, and one that is too dry will cause the mycelium to grow slowly and potentially stall. If you manage to get a dry substrate to colonize, it may not fruit, or primordia and pins may abort.</p>
+                <br>
+
+                <h3>pH</h3>
+                <p>In general, pH is a measure of how acidic or basic a liquid solution is. It is the measure of the concentration of hydrogen ions in a liquid solution which corresponds to pH readings. The higher the concentration, the more acidic the solution is. Each mushroom species has its own preferred pH range, but many species enjoy a neutral pH around 7. However, many species are tolerant of higher-than-average pH levels, which is why lime pasteurization is effective. However, a pH that is too high will prevent the mycelium from accessing nutrients, essentially starving the mycelium and risking damage to the culture. For quicker colonization, the substrate's pH should be as close to neutral as possible.</p>
+            </div>
+        </div>
+        <hr>
+
+
+<!--Biological Efficiency vs. Productivity Efficiency-->
+        <div class="indent2">
+            <h2 id="be"><img src="img/img2.png" width="30px" height="30px"> Biological Efficiency vs. Productivity Efficiency</h2>
+            <div class="indent">
+                <p>One of the methods for determining the quality of a substrate is by figuring out the ratio of fresh mushrooms to dry ingredients. This is called the "biological efficiency", or BE. This metric is also used to evaluate culture quality and predicting yields. It is measured by the following equation:</p>
+
+                <p><b>BE = (W / D) x 100%</b></p>
+
+                <p>whereas</p>
+                <ul>
+                    <li>BE = biological efficiency</li>
+                    <li>W = total weight of fresh mushrooms over all flushes</li>
+                    <li>D = total weight of dry substrate ingredients</li>
+                </ul>
+
+                <p>As you can see, it uses the weight of the dry ingredients. Using our example from above, the BE would not use the entire 3kg weight. That is the total weight of the substrate with the water added. The BE would use 1200g, which is the total weight of the dry ingredients:</p>
+                <ul>
+                    <li>Wood chips: 600g</li>
+                    <li>HWFP: 400g</li>
+                    <li>Rice bran: 150g</li>
+                </ul>
+
+                <p>BE states that if I were to harvest 1000g of fresh mushrooms through all flushes from our substrate, the BE would be 83.33%:</p>
+                <ul>
+                    <li>BE = (W / D) x 100</li>
+                    <li>BE = (1000g / 1200g) x 100</li>
+                    <li>BE = (.8333) x 100</li>
+                    <li>BE = 83.33%</li>
+                </ul>
+
+                <p>BE certainly has its place in mushroom cultivation. For our purposes, I find this metric to be lacking. That is why I favor a different metric that I've labeled the "productivity efficiency", or PE.</p>
+                <br>
+
+                <h3>Productivity efficiency</h3>
+                <table class="table1">
+                    <tr>
+                        <td class="table1"><i><mark>Before I get into this, I want to state that <b>this is my own personal opinion.</b> I still keep track of the BE on my experimental grows in the case that I find value in that information at a later point in my journey. However at this point, I don't see why it should be the primary metric for determining a substrate's efficiency. BE is an excellent way of ensuring that you don't run out of substrate material, but judging a substrate's efficiency should be measured with a different metric. Of course, this favors one cultivator's personal preferences over something other cultivators have been doing since before I even started my own cultivation journey. I recognize this and acknowledge it fully. With that being said, let me explain why I believe the BE metric - as it is - is the wrong metric to use here.</mark></i>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>The BE equation does not take the water content into consideration. It only uses the sum of the dry ingredients. This is perfect if you are checking your stock of substrate ingredients. If you know you can harvest 40kg of fresh mushrooms from 40kg substrate, you know what kind of yields to expect before you even purchase ingredients. However, I find this to be of little value to judge a substrate's efficiency as fresh mushrooms are around 90% water by weight. Dry substrate ingredients can't produce mushrooms on their own and will need water in order for the mushroom to convert some of that dry material into mushrooms.</p>
+
+                <p>Another reason why I personally believe the BE metric should not be the primary metric used for substrate efficiency is because of the values that you can end up with. It is fairly common to see a BE of over 100% using the dry weight only. That does little to tell me anything about the substrate. However, using the total substrate weight will always produce a value less than 100% and is easier to visualize to determine efficiency.</p>
+
+                <p>I would propose to change the metric from "biological efficiency" to "productivity efficiency", and I would change the equation to something like this:</p>
+                <ul>
+                    <li>PE = (M / S) x 100%</li>
+                </ul>
+
+                <p>whereas</p>
+                <ul>
+                    <li>PE = productivity efficiency</li>
+                    <li>M = total weight of fresh mushrooms over all flushes</li>
+                    <li>S = total weight of substrate (dry ingredients and water combined)</li>
+                </ul>
+                
+                <p>Here's the example from above. Let's say I was able to harvest 1000g of fresh mushrooms from our 3kg substrate:</p>
+                <ul>
+                    <li>PE = (M / S) x 100%</li>
+                    <li>PE = (1000 / 3000) x 100%</li>
+                    <li>PE = 0.3333 x 100%</li>
+                    <li>PE = 33.33%</li>
+                </ul>
+
+                <p>One thing that I haven't covered that should be taken into account is the weight of the spawn that you will be inoculating the substrate with. I have a particularly high spawning ratio and will add a range of 250-400g of colonized oats to a 3-4kg substrate. That added mass has to added to the weight of the substrate for the most reliable data. For the sake of simplicity, we will assume that the total weight of the substrate after inoculation is 3kg.</p>
+
+                <p>The result from the PE equation is a much smaller number than BE, but it's much easier to visualize and grasp. Essentially this number tells me that out of the 3kg, 33.33% of it was converted into fresh mushrooms. That would mean that after the last flush has been harvested, the substrate should weigh approximately 2kg, around a third lighter than when it began. Of course there may be some discrepancies with the weight due simply to the fact that the mycelium and substrate will draw moisture from the humidity of the fruiting environment or any misting or soaking that you may do to it. The "fact" of the matter still stands: <u>PE is a better respresentation of overall substrate efficiency than BE</u>.</p>
+            </div>
+        </div>
+        <hr>
+
+
+<!--MC Test-->
+        <div class="indent2">
+            <h2 id="mc"><img src="img/img2.png" width="30px" height="30px"> MC Test</h2>
+            <div class="indent">
+                <p>In order to achieve the target MC for your substrate, you must take the water currently present in your ingredients into account. Just because a material feels dry to the touch doesn't mean that there isn't water residing in it. Assuming that all of your materials begin with 0% MC can possibly lead to a substrate well over the margin of error for moisture content, making the substrate too wet for mycelium to grow. Using the wood chips from the example above, the wood chips were 16% water. Assuming that they contain no water would cause the moisture content to increase and the amount of dry matter to decrease. This would have significant effects on the quality of the substrate and colonization by the mycelium. This is why performing an MC test is important.</p>
+
+                <p>To perform an MC test on a material, follow these steps:</p>
+
+                <table class="table1">
+                    <tr>
+                        <td class="table1">
+                            <ol>
+                                <li><b>Thoroughly mix the batch of material from where you will pull your sample from.</b>
+                                    <ul>
+                                        <li>This is to help evenly distribute the moisture content in the container. Moisture content will vary in any container, even if it has been sitting undisturbed for a long time. If the container of material has been stored in a cool, dry place, moisture will slowly evaporate from the surface of the batch, leading to a lower MC% at the surface than a sample from the bottom of the container. Mixing the batch helps to resolve this issue.</li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li><b>Weigh out 100g of your ingredient and lay it out on a baking sheet.</b>
+                                    <ul>
+                                        <li>I would recommend sticking with grams for this test. 100g is a decently sized sample that will give you accurate results. Not too small that the results are unreliable, and not too big that it would take longer than necessary to conduct. Understand that the larger the sample, the more accurate the results, but the longer it will take for the test to be completed.</li>
+                                        <li>It is also easier to figure out MC% with 100g since you can just subtract your final weight from your 100g starting weight. The difference would be the MC%.</li>
+                                        <li>Do not pack your sample onto the baking sheet. This will cause your sample to bake unevenly with the center drying out more slowly than the surface. Leave the material loose on the pan. I would make the layer no thicker than about an inch. This will make the test quick. If the whole 100g of your sample won't fit in your pan, you can split the sample into smaller parts in order to fit. However, this will also extend the amount of time needed to conduct this test. It may be tempting to use only one half of the sample for the MC test, but remember the rule: the smaller the sample, the less accurate and reliable the results will be.</li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li><b>Heat your oven to 200F and bake your sample for 1 hour.</b>
+                                    <ul>
+                                        <li>Do not exceed 200F. A higher temperature will not result in a quicker test. A higher temperature will cause the material to char and possibly cinder. Be smart about it.</li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li><b>Remove and weigh the sample.</b>
+                                    <ul>
+                                        <li>Write this number down. You will use it to determine how close you are to being done with the test.</li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li><b>Bake the sample for another hour.</b></li>
+                                <br>
+                                <li><b>Remove and weigh the sample again.</b>
+                                    <ul>
+                                        <li>Again, write this number down. If this new weight is off by no more than a gram, the test is complete. If it is off by more than a gram, repeat the last two steps. Continue repeating them until the final sample weight is off by no more than a gram from the previous weight.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+
+                <p>Once you've finished your test, subtract your final weight from the starting weight (100g). The difference is the MC% of your material. Using the wood chips from above, here are the results from its MC test:</p>
+
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td colspan="2" class="txcenter2">
+                            <b>Wood chips</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Starting weight</td>
+                        <td>100g</td>
+                    </tr>
+                    <tr>
+                        <td>Weigh 1</td>
+                        <td>93g</td>
+                    </tr>
+                    <tr>
+                        <td>Weigh 2</td>
+                        <td>86g</td>
+                    </tr>
+                    <tr>
+                        <td>Weigh 3</td>
+                        <td>84g</td>
+                    </tr>
+                    <tr>
+                        <td>Weigh 4</td>
+                        <td>84g</td>
+                    </tr>
+                </table>
+
+                <p>Subtracting the final weight from the starting weight gives us the MC%:</p>
+                <ul>
+                    <li>MC% = (starting weight) - (final weight)</li>
+                    <li>MC% = 100g - 84g</li>
+                    <li>MC% = 16%</li>
+                </ul>
+
+                <p>As you can see, it took a while to complete this test. If the moisture content had been higher for this sample, the MC test would have taken longer to complete. The higher the moisture content, the longer the test will take.</p>
+            </div>
+        </div>
+        <hr>
+
+
+<!--FC Test-->
+        <div class="indent2">
+            <h2 id="fc"><img src="img/img2.png" width="30px" height="30px"> FC Test</h2>
+            <div class="indent">
+                <p>FC stands for "field capacity". In general, it is the measure of moisture that can be held within a material without draining. An FC test is a method for determining the approximate moisture content of a substrate that has been mixed and wet. It is a less precise test used on substrates that have already been mixed together. You could also do an FC test on your individual ingredients separately, but the test is more accurate after the ingredients have been mixed together. This is so that one ingredient's low moisture content won't affect another's higher content.</p>
+
+                <img src="img/fctest.jpg" height="auto" width="20%">
+                
+                <p>To perform an FC test, squeeze a handful of mixed and wetted substrate. The water that is squeezed out of the sample will tell you whether your substrate is too wet, too dry, or just right. If a stream of water pours out of the sample, the substrate is too wet. If nothing drips out of it, it's too dry. If just a few drops fall out, then it's just right. This will not tell you exactly how much water is in the substrate, but it will provide you with a reasonable range of moisture content. A squeezed sample that only lets out a few drops may be in the 50-70% MC range. This is not always the case as determining the MC% via an FC test is dependent on different factors, such as the type of material and squeeze strength. I've mentioned a "margin of error" a few times so far. The margin of error is the range of a "just right" amount of water when squeezed. Think of this range as more of a gradient rather than definitive thresholds.</p>
+
+                <img src="img/moistgrad.png">
+                <p><i>This chart is only an example. Each specie will have its own preferred MC%.</i></p>
+
+                <p>As you're working with the substrate calculator, you should take the opportunity to become familiar with the visual and tactile cues of a properly hydrated substrate made with your specific ingredients. This will help you create substrates quicker. Once you become familiar with your ingredients, you will be able to mix and hydrate mass amounts of substrate with just a quick look and squeeze. You will not have a need for this calculator once you've mastered the FC test. However, if you are going for precision, the calulator will be a valuable tool.</p>
+            </div>
+        </div>
+        <hr>
+
+
+<!--Lime Pasteurization-->
+        <div class="indent2">
+            <h2 id="lime"><img src="img/img2.png" width="30px" height="30px"> Lime Pasteurization</h2>
+            <div class="indent">
+                <p>All substrates have to be treated in a way that will reduce the risk of contamination and increase the probability of full colonization by the mushroom culture. This can be affected through either a physical or chemical method. There are several different ways to treat substrates to achieve this goal:</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="indent2">
+                                <ul>
+                                    <li><b>Sterilization</b>- This is the most commonly used treatment. The theory behind this type of sterilization is that all living organisms residing in the substrate - as well as endospores - will be killed by the pressure and wet heat via steam. The temperature must reach a minimum of 250F, which occurs at 15psi at sea level and held at that pressure for about 2 hours to ensure that all areas of the substrate reach that temperature as well as ensuring that as many colonies of bacteria and fungi are destroyed. A pressure cooker is used for this method.</li>
+                                    <br>
+                                    <li><b>Tyndallization</b>- This is also a sterilization method, except this method doesn't involve pressure and requires a minimum of three days before completion. The theory is that as the substrate rests at room temperature, competing bacteria and fungi will grow and proliferate. The substrate is brought to 212F for as long as is necessary for all areas of the substrate to reach the target temperature. The substrate is then left to rest for 24 hours, which allows any surviving competitors and endospores to germinate. After this rest period, it is steamed again. It is allowed to rest for a second time, after which it is steamed again. This is repeated for one more day. After three days of resting and steaming, there should be no living organisms or endospores remaining in the substrate, making it sterile.</li>
+                                    <br>
+                                    <li><b>Hot pasteurization</b>- This method is used in reducing the contaminant concentration to a level that gives the mushroom mycelium an advantage. This involves bringing your substrate up to a temperature in the range of 160-190F for an hour. The idea is that the heat will kill off most of the vulnerable contaminants, leaving most of the thermophilic intact and thriving. Once the temperature cools down, the remaining organisms have been reduced to a point that the mushroom mycelium will have a higher probability of full colonization of the substrate. Understand that pasteurization does not equal sterilization. Pasteurization does not destroy all living organisms. It simply reduces the contaminant load. Supplemented substrates using a nutritious ingredient (such as rice bran) should not be treated by pasteurization because of the concentration of endospores that won't be affected by the low heat.</li>
+                                    <br>
+                                    <li><b>Fermentation</b>- This method works on the same principle as hot pastuerization and works simiar to lactic fermentation for producing fermented foods, such as hot sauce. The substrate is submerged in water for days at a time, causing the aerobic competitors to die and allowing the anaerobic organisms to flourish. After soaking for a few days, the substrate is pulled from the water and allowed to drain. The sudden influx of oxygen from the air into the substrate will destroy the anaerobic organisms. Just like other pasteurization methods, fermantation does not affect endospores. They will remain in your substrate after draining. They will eventually germinate and attempt to colonize the substrate, but with the reduction of vegetative organisms, the mushroom mycelium will have a greater advantage for full colonization.</li>
+                                    <br>
+                                    <li><b>Lime pasteurization</b>- This is the method I will be discussing in this section. This method involves soaking substrate material in a hydrated lime bath to raise the pH which will force most of the organisms to go dormant. Being as many mushroom species can tolerate higher pH levels than most of their competitors, this rise in pH can give the mushroom mycelium an advantage. This and other chemical pasteurization methods are sometimes referred to as "cold pasteurization". This is not to be confused with pascalization or high-pressure pasteurization (HPP), which is also referred to by the same name. Pascalization is unattainable by home cultivators and small scale farmers and will be omitted from this page. The lime bath can be cool or raised to the heat pasteurization range of 160-190F.</li>
+                                    <br>
+                                    <li><b>H2O2 pasteurization</b>- This method works by soaking substrate material in a hydrogen peroxide (H2O2) solution which will destroy most of the living organisms. This reduces the contamination load and gives the mushroom mycelium a better chance at full colonization. As with the other treatments, endospores are unaffected by this method.</li>
+                                    <br>
+                                    <li><b>Bleach pasteurization</b>- This method can be a little tricky in that overdoing it on the bleach can cause serious harm to your cultures. This involves soaking the substrate material in a bleach solution to kill off I have used this method a few times as an experiment. I have not done enough experiments to make a definitive correlation with bleach, but the fruits I managed to get from those bleached substrates were deformed, if I could get them to fruit at all. I plan to do more experiments with bleach in the future.</li>
+                                    <br>
+                                    <li><b>Wood ash pasteurization</b>- </li>
+                                    <br>
+                                    <li><b>Radiation</b>- This method uses UV-C radiation to destroy microorganisms by damaging their DNA to the degree that they can't perform vital cellular functions. This is referred to as ultraviolet germicidal irradiation, or UVGI. In order for this method to have any degree of effectiveness, all areas of the substrate must be touched by the radiation. This would involve laying the entire substrate out in a thin layer and hitting it with UV-C radiation. The material would have to be turned several times to ensure that the radiation has touched the entire surface area of each particle.</li>
+                                    <br>
+                                    <li><b>Ozone</b>- Ozone is one of the more powerful oxidizers known. It works by oxidizing the cells of microorganisms, destroying them in the process. Ozone generators work by applying an electrical charge to the O2 molecule, splitting it into elemental oxygen. At standard atmospheric pressure and temperature, the single oxygen atoms will bind with other O2 molecules, creating ozone. With a half life of around 20 minutes, the ozone can be very effective. However, like with UV-C sterilization, ozone has to be able to reach the entire surface area of all the particles in the substrate. This is to ensure that any competitors hiding in deep channels or crevices are destroyed.</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>What is lime?</h3>
+                <p>Lime is a term referring to the inorganic products created from the processing of naturally occurring limestone. Limestone is a type of sedimentary rock rich in calcium carbonate, magnesium carbonate, and/or dolomite that is formed when dissolved calcium minerals precipitate out of water and become cemented over time. To create lime, limestone is collected, crushed, seived, washed, and fired in a kiln at temperatures over 1650F/900C. This converts the stone into quicklime, or calcium oxide. It is then crushed into a fine powder and water added to it to create hydrated lime, or calcium hydroxide. It is a highly alkai product that has many applications in various industries including construction, agriculure, and sanitation. For our purpose, we want to use its alkali property the raise the pH of our substrates.</p>
+
+                <h3>Which lime do I use?</h3>
+                <p>There are many different types of lime available for many different industries. What makes it even more complicated is that different manufacturers may refer to the same product by different names. Below is a list of different common types of lime, their compositions, and their primary uses:</p>
+
+                <table class="table1">
+                    <tr style="background-color:#ad0000; color:white">
+                        <td class="txcenter2" colspan="3">
+                            <b>LIME TYPES</b>
+                        </td>
+                    </tr>
+                    <tr class="txcenter">
+                        <td><b>Lime</b></td>
+                        <td><b>Composition</b></td>
+                        <td><b>Uses</b></td>
+                    </tr>
+                    <tr>
+                        <td>Quicklime</td>
+                        <td>CaO, calcium oxide</td>
+                        <td>
+                            <ul>
+                                <li>Desulfuruization of exhaust gases of fossil fuel power plants</li>
+                                <li>Soil stabilization for highway and building construction</li>
+                                <li>Metal manufacturing</li>
+                                <li>Paper manufacturing</li>
+                                <li>Waste water treatment</li>
+                                <li>Glass manufacturing</li>
+                                <li>Cement production</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hydrated lime
+                            <br>Slacked lime
+                            <br>Pickling lime
+                            <br>Builder's lime</td>
+                        <td>Ca(OH)<sup>2</sup>, calcium hydroxide</td>
+                        <td>
+                            <ul>
+                                <li>Mortar production</li>
+                                <li>Waste water treatment</li>
+                                <li>Food additive</li>
+                                <li>Fungicide</li>
+                                <li>Endodontics</li>
+                                <li>Nixtamalization</li>
+                                <li>Leather treatment</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Agricultural lime
+                            <br>Garden lime</td>
+                        <td>CaCO<sup>3</sup>, calcium carbonate</td>
+                        <td>
+                            <ul>
+                                <li>Soil pH balanacing</li>
+                                <li>Cement productino</li>
+                                <li>Sugar beet refining</li>
+                                <li>Iron purification</li>
+                                <li>Paper manufacturing</li>
+                                <li>Paint production</li>
+                                <li>Floor tile manufacturing</li>
+                                <li>Antacid ingredient</li>
+                                <li>Food additive</li>
+                                <li>Household cleaners</li>
+                                <li>Waste water treatment</li>
+                                <li>Plastic manufacturing</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dolomite lime</td>
+                        <td>CaMg(CO<sup>3</sup>)<sup>2</sup>, calcium magnesium carbonate</td>
+                        <td>
+                            <ul>
+                                <li>Concrete aggregate</li>
+                                <li>Magnesium production</li>
+                                <li>Steel manufacturing</li>
+                                <li>Glass manufacturing</li>
+                                <li>Aquarium pH buffer</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <p><b>The type of lime used for substrate pasteurization is hydrated lime that is high in calcium (in the form of calcium hydroxide) and low in magnesium.</b> Lime that has a high magnesium level is unsuitable for mushroom cultivation. High magnesium levels in the substrate will prevent mushroom mycelium from growing. The magnesium content should never be higher than 5%. Of course, not all hydrated lime products are the same. Some products are labeled as hydrated lime, but the compositions may contain more than just calcium hydroxide. When choosing lime, always refer to the label. Reputable brands will list the lime's composition right on the bag. If it's not on the bag, check online for an MSDS sheet for the product.</p>
+
+                <p>Here are a few examples of hydrated lime products and their compositions from either their labels or MSDS:</p>
+
+                <img src="img/lime1.png"><br>
+                <img src="img/lime2.png"><br>
+                <img src="img/lime3.png"><br>
+                <img src="img/lime4.png"><br>
+
+                <p>Apologies for the low quality images. Here is the information showing what is listed on the labels:</p>
+
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td class="txcenter2" colspan="2">
+                            <b>HI-YIELD HORTICULTURAL HYDRATED LIME</b>
+                        </td>
+                    </tr>
+                    <tr class="txcenter">
+                        <td><b>Component</b></td>
+                        <td><b>Ratio</b></td>
+                    </tr>
+                    <tr>
+                        <td>Calcium (Ca)</td>
+                        <td class="txright">51.00%</td>
+                    </tr>
+                    <tr>
+                        <td>Calcium oxide (CaO)</td>
+                        <td class="txright">72.50%</td>
+                    </tr>
+                    <tr>
+                        <td>Calcium hydroxide (Ca(OH)<sub>2</sub>)</td>
+                        <td class="txright">95.79%</td>
+                    </tr>
+                    <tr>
+                        <td>Magnesium oxide (MgO)</td>
+                        <td class="txright">0.45%</td>
+                    </tr>
+                </table>
+                <br>
+
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td class="txcenter2" colspan="2">
+                            <b>TEXAS LIME COMPANY HYDRATED LIME</b>
+                        </td>
+                    </tr>
+                    <tr class="txcenter">
+                        <td><b>Component</b></td>
+                        <td><b>Ratio</b></td>
+                    </tr>
+                    <tr>
+                        <td>Calcium hydroxide</td>
+                        <td class="txright">>94%</td>
+                    </tr>
+                    <tr>
+                        <td>Magnesium oxide</td>
+                        <td class="txright"><1%</td>
+                    </tr>
+                    <tr>
+                        <td>Crystalline silica</td>
+                        <td class="txright"><1%</td>
+                    </tr>
+                </table>
+                <br>
+
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td class="txcenter2" colspan="2">
+                            <b>ESPOMA ORGANIC GARDEN LIME</b>
+                        </td>
+                    </tr>
+                    <tr class="txcenter">
+                        <td><b>Component</b></td>
+                        <td><b>Ratio</b></td>
+                    </tr>
+                    <tr>
+                        <td>Calcium (Ca)</td>
+                        <td class="txright">21%</td>
+                    </tr>
+                    <tr>
+                        <td>Magnesium (Mg)</td>
+                        <td class="txright">10%</td>
+                    </tr>
+                    <tr>
+                        <td>Calcium oxide (CaO)</td>
+                        <td class="txright">29%</td>
+                    </tr>
+                    <tr>
+                        <td>Magnesium oxide (MgO)</td>
+                        <td class="txright">17%</td>
+                    </tr>
+                    <tr>
+                        <td>Calcium carbonate (CaCO<sub>3</sub>)</td>
+                        <td class="txright">52%</td>
+                    </tr>
+                    <tr>
+                        <td>Magnesium carbonate (MgCO<sub>3</sub>)</td>
+                        <td class="txright">35%</td>
+                    </tr>
+                </table>
+                <br>
+
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td class="txcenter2" colspan="2">
+                            <b>WESTERN MIRACLE PRESSURE HYDRATED TYPE S LIME</b>
+                        </td>
+                    </tr>
+                    <tr class="txcenter">
+                        <td><b>Component</b></td>
+                        <td><b>Ratio</b></td>
+                    </tr>
+                    <tr>
+                        <td>Calcium hydroxide</td>
+                        <td class="txright">50-60%</td>
+                    </tr>
+                    <tr>
+                        <td>Crystalline silica</td>
+                        <td class="txright">0.0001-1%</td>
+                    </tr>
+                </table>
+                
+                <p>As you can see, the composition of each product differs although they each carry the name "hydrated lime" (with the exception of the garden lime, which was only included for demonstration purposes). This is why it's important to check the labels or MSDS for the products you're interested in.</p>
+
+                <p>Out of the four examples above, the best choices would be the <b>Hi-Yield Horticultural Hydrated Lime</b> and the <b>Texas Lime Company Hydrated Lime</b>. According to their labels, their magnesium contents are both under 1% of the total composition. This is well below the 5% threshold that make those products suitable for lime pasteurization. Looking at the label for the <b>Espoma Organic Garden Lime</b>, you can see that the magnesium content is twice the acceptable magnesium threshold. Not only than, the lime content does not come from calcium hydroxide. Instead, it's derived from calcium carbonate. The calcium oxide ratio is fairly high as well, but the calcium carbonate is primarily responsible for its alkali properties. Even if the magnesium content was well below 5%, it would still be a less acceptable product to use given that the pH for calcium carbonate can only reach 9.4 when fully saturated. For proper lime pasteurization, a minimum of pH 10 should be reached. For the <b>Western Miracle Pressure Hydrated Type S Lime</b>, there is no label on the packaging. A quick look at the MSDS tells us everything we need to know about its composition. According to the table, it shows calcium hydroxide making up 50-60% of the product, but just above the table, it lists its "other means of identification" as "hydrated dolomitic lime" and "double hydrated dolomitic lime". A prime example as to why you should check the labels. Dolomite (or dolomitic lime in this case) is not proper for lime pasteurization due to the high magnesium content.</p>
+
+                <p>If you are interested in lime pasteurization, do the research so you don't end up with the wrong type of lime.</p>
+
+                <h3>How does it work?</h3>
+                <p>As mentioned, lime raises the pH of the substrates. This sudden change in pH will destroy some colonies of contaminants while forcing others to go dormant. This gives the mushroom an advantage given their more tolerant nature of high pH levels.</p>
+
+                <p>To prepare for lime pasteurization, measure out enough water to completely submerge your substrate. Meaure out the appropriate amount of lime and add to the water. <b><u>Do not heat the water</u>.</b> Stir the water long enough for the powder to dissolve. Once it has, submerge the substrate in the lime water with something placed on top to keep it below the water line. This can be done with a brick or cinder block. Keep the substrate submerged for at least a couple hours. It won't hurt the substrate if it's left unattended for longer. After it has soaked, pull the substrate from the water and allow it to drain completely. Mix the materials and perform an FC test periodically to gauge the moisture content. If you are unsure whether you're gauging the moisture correctly, you can take a 100g sample from the substrate and perform an MC test. This is much more reliable than the FC test, although it does take much longer to perform.</p>
+
+                <h3>How much lime do I use?</h3>
+                <p>This is a tricky question due to the issue that was discussed earlier: although different brands may use the term "hydrated lime", the composition is often not pure calcium hydroxide. This will affect the solubility and maximum pH that can be achieved. In general, calcium hydroxide is only slightly solubile in pure water at ~1.6g/L at 20C. It's solubility is affected by temperature with it becoming less soluble in pure water as the temperature rises. At 100C, its solubility is 0.66g/L and increases to 1.89g/L at 0C. This is why the lime water should not be heated. Another factor that can affect the pH is the fact that calcium hydroxide can easily react with carbon dioxide from the air, splitting the calcium hydroxide molecule into calcium carbonate and water. As mentioned, calcium carbonate does not raise the pH level high enough for proper lime pasteurization.</p>
+
+                <p>When fully saturated, calcium hydroxide can only reach a pH of 12.4. This makes it a very reliable pH indicator. However, as stated in the paragraph above, sometimes the products can be mixed with other chemicals that can affect the pH. One way to determine the "power" of your lime is to perform a pH test. This can be done by measuring out a liter of room temperature water (preferrably distilled water) and adding small increments of lime to it, measuring the pH of the water before adding more lime. You can measure the pH with a digital pH meter or pH strips.</p>
+
+                <p>For more information on calcium hydroxide, visit the <a href="https://pubchem.ncbi.nlm.nih.gov/compound/Calcium-hydroxide">PubChem site</a>.</p>
+            </div>
+        </div>
+        <hr>
+
+
+<!--Math-->
+        <div class="indent2">
+            <h2 id="math"><img src="img/img2.png" width="30px" height="30px"> Math</h2>
+            <div class="indent">
+                <p>As if there hasn't already been enough math explained throughout this page, this section shows how the calculator works. I've written out the equations that provide the information in each field. This took a bit of thinking outside the box to get the correct equations, but it was a fun thought experiment that I believe can provide great value to those cultivators who - like me - like to experiment with different types of substrate materials, or for those who want to use raw materials with varing degrees of moisture content.</p>
+
+                <b><i>If you happen to find any errors or miscalculations, please do not hesistate to contact me.</i></b> I followed no road map to come up with these equations. They were all created myself through a lot of trial and error, so I do not claim them to be entirely correct. I only assume that they are based on checks, but of course, those checks were also done myself. Maybe even the checks are wrong. But if you are so inclined, I would greatly appreciate an independent check of my math to ensure that the calculator is accurate and reliable. Thank you in advance.</p>
+
+                <p><b>NOTE:</b> The superscripts and subscripts are not exponents. They are variable identifiers.</p>
+                <p>The short equations are the simplest I can make the math associated with that field. The long equations are the expanded versions of the short versions only using variables that require user input. The simplified equations are the simplest forms of the long equations that could be made.</td>
+
+                <table>
+                    <tr style="background-color:#ad0000; color:white">
+                        <td class="txcenter2" colspan="6"><b>CALCULATOR FORMULAS</b></td>
+                    </tr>
+                    <tr class="txcenter">
+                        <td><b>Table</b></td>
+                        <td><b>Variable</b></td>
+                        <td><b>Name</b></td>
+                        <td><b>Short equation</b></td>
+                        <td class="td1"><b>Long equation</b></td>
+                        <td><b>Simplified equation</b></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="8"><b>SUB RATIO</b></td>
+                        <td class="txcenter">a<sup>1</sup></td>
+                        <td>Water (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">b<sup>1</sup></td>
+                        <td>Ingredient 1 (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">c<sup>1</sup></td>
+                        <td>Ingredient 2 (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">d<sup>1</sup></td>
+                        <td>Ingredient 3 (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">e<sup>1</sup></td>
+                        <td>Ingredient 4 (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">f<sup>1</sup></td>
+                        <td>Ingredient 5 (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">g<sup>1</sup></td>
+                        <td>Ingredient 6 (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">h<sup>1</sup></td>
+                        <td>TOTAL (%)</td>
+                        <td>h<sup>1</sup> = a<sup>1</sup> + b<sup>1</sup> + c<sup>1</sup> + d<sup>1</sup> + e<sup>1</sup> + f<sup>1</sup> + g<sup>1</sup></td>
+                        <td>h<sup>1</sup> = a<sup>1</sup> + b<sup>1</sup> + c<sup>1</sup> + d<sup>1</sup> + e<sup>1</sup> + f<sup>1</sup> + g<sup>1</sup></td>
+                    </tr>
+                    <tr class="tr1">
+                        <td rowspan="8"><b>SUB BREAKDOWN</b></td>
+                        <td class="txcenter">i<sup>1</sup></td>
+                        <td>Total sub weight (g)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">j<sup>1</sup></td>
+                        <td>Water (g)</td>
+                        <td>j<sup>1</sup> = (i<sup>1</sup> * a<sup>1</sup>) / 100</td>
+                        <td>j<sup>1</sup> = (i<sup>1</sup> * a<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">k<sup>1</sup></td>
+                        <td>Ingredient 1 (g)</td>
+                        <td>k<sup>1</sup> = (i<sup>1</sup> * b<sup>1</sup>) / 100</td>
+                        <td>k<sup>1</sup> = (i<sup>1</sup> * b<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">l<sup>1</sup></td>
+                        <td>Ingredient 2 (g)</td>
+                        <td>l<sup>1</sup> = (i<sup>1</sup> * c<sup>1</sup>) / 100</td>
+                        <td>l<sup>1</sup> = (i<sup>1</sup> * c<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">m<sup>1</sup></td>
+                        <td>Ingredient 3 (g)</td>
+                        <td>m<sup>1</sup> = (i<sup>1</sup> * d<sup>1</sup>) / 100</td>
+                        <td>m<sup>1</sup> = (i<sup>1</sup> * d<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">n<sup>1</sup></td>
+                        <td>Ingredient 4 (g)</td>
+                        <td>n<sup>1</sup> = (i<sup>1</sup> * e<sup>1</sup>) / 100</td>
+                        <td>n<sup>1</sup> = (i<sup>1</sup> * e<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">o<sup>1</sup></td>
+                        <td>Ingredient 5 (g)</td>
+                        <td>o<sup>1</sup> = (i<sup>1</sup> * f<sup>1</sup>) / 100</td>
+                        <td>o<sup>1</sup> = (i<sup>1</sup> * f<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">p<sup>1</sup></td>
+                        <td>Ingredient 6 (g)</td>
+                        <td>p<sup>1</sup> = (i<sup>1</sup> * g<sup>1</sup>) / 100</td>
+                        <td>p<sup>1</sup> = (i<sup>1</sup> * g<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr class="tr1">
+                        <td rowspan="24"><b>INGREDIENT<br>MC PROFILES</b></td>
+                        <td class="txcenter" style="background-color:#858585">q<sup>1</sup></td>
+                        <td><i>Ingredient 1</i> > Dry weight (g)</td>
+                        <td>q<sup>1</sup> = k<sup>1</sup></td>
+                        <td>q<sup>1</sup> = (i<sup>1</sup> * b<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">r<sup>1</sup></td>
+                        <td><i>Ingredient 1</i> > MC (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">s<sup>1</sup></td>
+                        <td><i>Ingredient 1</i> > MC (g)</td>
+                        <td>s<sup>1</sup> = t<sup>1</sup> - q<sup>1</sup></td>
+                        <td>s<sup>1</sup> = (((i<sup>1</sup> * b<sup>1</sup>) / 100) / ((100 - r<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * b<sup>1</sup>) / 100)</td>
+                        <td>\( s_1 = \frac{i_1 \cdot b_1 \cdot r_1}{100 \cdot (100 - r_1)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">t<sup>1</sup></td>
+                        <td><i>Ingredient 1</i> > Wet weight (g)</td>
+                        <td>t<sup>1</sup> = q<sup>1</sup> / ((100 - r<sup>1</sup>) * 0.01)</td>
+                        <td>t<sup>1</sup> = ((i<sup>1</sup> * b<sup>1</sup>) / 100) / ((100 - r<sup>1</sup>) * 0.01)</td>
+                        <td>\( t_1 = \frac{i_1 \cdot b_1}{100 - r_1} \)</td>
+                    </tr>
+                    <tr class="tr2">
+                        <td class="txcenter" style="background-color:#858585">u<sup>1</sup></td>
+                        <td><i>Ingredient 2</i> > Dry weight (g)</td>
+                        <td>u<sup>1</sup> = l<sup>1</sup></td>
+                        <td>u<sup>1</sup> = (i<sup>1</sup> * c<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">v<sup>1</sup></td>
+                        <td><i>Ingredient 2</i> > MC (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">w<sup>1</sup></td>
+                        <td><i>Ingredient 2</i> > MC (g)</td>
+                        <td>w<sup>1</sup> = x<sup>1</sup> - u<sup>1</sup></td>
+                        <td>w<sup>1</sup> = (((i<sup>1</sup> * c<sup>1</sup>) / 100) / ((100 - v<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * c<sup>1</sup>) / 100)</td>
+                        <td>\( w_1 = \frac{i_1 \cdot c_1 \cdot v_1}{100 \cdot (100 - v_1)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">x<sup>1</sup></td>
+                        <td><i>Ingredient 2</i> > Wet weight (g)</td>
+                        <td>x<sup>1</sup> = u<sup>1</sup> / ((100 - v<sup>1</sup>) * 0.01)</td>
+                        <td>x<sup>1</sup> = ((i<sup>1</sup> * c<sup>1</sup>) / 100) / ((100 - v<sup>1</sup>) * 0.01)</td>
+                        <td>\( x_1 = \frac{i_1 \cdot c_1}{100 - v_1} \)</td>
+                    </tr>
+                    <tr class="tr2">
+                        <td class="txcenter" style="background-color:#858585">q<sup>2</sup></td>
+                        <td><i>Ingredient 3</i> > Dry weight (g)</td>
+                        <td>q<sup>2</sup> = m<sup>1</sup></td>
+                        <td>q<sup>2</sup> = (i<sup>1</sup> * d<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">r<sup>2</sup></td>
+                        <td><i>Ingredient 3</i> > MC (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">s<sup>2</sup></td>
+                        <td><i>Ingredient 3</i> > MC (g)</td>
+                        <td>s<sup>2</sup> = t<sup>2</sup> - q<sup>2</sup></td>
+                        <td>s<sup>2</sup> = (((i<sup>1</sup> * d<sup>1</sup>) / 100) / ((100 - r<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * d<sup>1</sup>) / 100)</td>
+                        <td>\( s_2 = \frac{i_1 \cdot d_1 \cdot r_2}{100 \cdot (100 - r_2)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">t<sup>2</sup></td>
+                        <td><i>Ingredient 3</i> > Wet weight (g)</td>
+                        <td>t<sup>2</sup> = q<sup>2</sup> / ((100 - r<sup>2</sup>) * 0.01)</td>
+                        <td>t<sup>2</sup> = ((i<sup>1</sup> * d<sup>1</sup>) / 100) / ((100 - r<sup>2</sup>) * 0.01)</td>
+                        <td>\( t_2 = \frac{i_1 \cdot d_1}{100 - r_2} \)</td>
+                    </tr>
+                    <tr class="tr2">
+                        <td class="txcenter" style="background-color:#858585">u<sup>2</sup></td>
+                        <td><i>Ingredient 4</i> > Dry weight (g)</td>
+                        <td>u<sup>2</sup> = n<sup>1</sup></td>
+                        <td>u<sup>2</sup> = (i<sup>1</sup> * e<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">v<sup>2</sup></td>
+                        <td><i>Ingredient 4</i> > MC (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">w<sup>2</sup></td>
+                        <td><i>Ingredient 4</i> > MC (g)</td>
+                        <td>w<sup>2</sup> = x<sup>2</sup> - u<sup>2</sup></td>
+                        <td>w<sup>2</sup> = (((i<sup>1</sup> * e<sup>1</sup>) / 100) / ((100 - v<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * e<sup>1</sup>) / 100)</td>
+                        <td>\( w_2 = \frac{i_1 \cdot e_1 \cdot v_2}{100 \cdot (100 - v_2)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">x<sup>2</sup></td>
+                        <td><i>Ingredient 4</i> > Wet weight (g)</td>
+                        <td>x<sup>2</sup> = u<sup>2</sup> / ((100 - v<sup>2</sup>) * 0.01)</td>
+                        <td>x<sup>2</sup> = ((i<sup>1</sup> * e<sup>1</sup>) / 100) / ((100 - v<sup>2</sup>) * 0.01)</td>
+                        <td>\( x_2 = \frac{i_1 \cdot e_1}{100 - v_2} \)</td>
+                    </tr>
+                    <tr class="tr2">
+                        <td class="txcenter" style="background-color:#858585">q<sup>3</sup></td>
+                        <td><i>Ingredient 5</i> > Dry weight (g)</td>
+                        <td>q<sup>3</sup> = o<sup>1</sup></td>
+                        <td>q<sup>3</sup> = (i<sup>1</sup> * f<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">r<sup>3</sup></td>
+                        <td><i>Ingredient 5</i> > MC (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">s<sup>3</sup></td>
+                        <td><i>Ingredient 5</i> > MC (g)</td>
+                        <td>s<sup>3</sup> = t<sup>3</sup> - q<sup>3</sup></td>
+                        <td>s<sup>3</sup> = (((i<sup>1</sup> * f<sup>1</sup>) / 100) / ((100 - r<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * f<sup>1</sup>) / 100)</td>
+                        <td>\( s_3 = \frac{i_1 \cdot f_1 \cdot r_3}{100 \cdot (100 - r_3)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">t<sup>3</sup></td>
+                        <td><i>Ingredient 5</i> > Wet weight (g)</td>
+                        <td>t<sup>3</sup> = q<sup>3</sup> / ((100 - r<sup>3</sup>) * 0.01)</td>
+                        <td>t<sup>3</sup> = ((i<sup>1</sup> * f<sup>1</sup>) / 100) / ((100 - r<sup>3</sup>) * 0.01)</td>
+                        <td>\( t_3 = \frac{i_1 \cdot f_1}{100 - r_3} \)</td>
+                    </tr>
+                    <tr class="tr2">
+                        <td class="txcenter" style="background-color:#858585">u<sup>3</sup></td>
+                        <td><i>Ingredient 6</i> > Dry weight (g)</td>
+                        <td>u<sup>3</sup> = p<sup>1</sup></td>
+                        <td>u<sup>3</sup> = (i<sup>1</sup> * g<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter">v<sup>3</sup></td>
+                        <td><i>Ingredient 6</i> > MC (%)</td>
+                        <td>[user input]</td>
+                        <td>[user input]</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">w<sup>3</sup></td>
+                        <td><i>Ingredient 6</i> > MC (g)</td>
+                        <td>w<sup>3</sup> = x<sup>3</sup> - u<sup>3</sup></td>
+                        <td>w<sup>3</sup> = (((i<sup>1</sup> * g<sup>1</sup>) / 100) / ((100 - v<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * g<sup>1</sup>) / 100)</td>
+                        <td>\( w_3 = \frac{i_1 \cdot g_1 \cdot v_3}{100 \cdot (100 - v_3)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">x<sup>3</sup></td>
+                        <td><i>Ingredient 6</i> > Wet weight (g)</td>
+                        <td>x<sup>3</sup> = u<sup>3</sup> / ((100 - v<sup>3</sup>) * 0.01)</td>
+                        <td>x<sup>3</sup> = ((i<sup>1</sup> * g<sup>1</sup>) / 100) / ((100 - v<sup>3</sup>) * 0.01)</td>
+                        <td>\( x_3 = \frac{i_1 \cdot g_1}{100 - v_3} \)</td>
+                    </tr>
+                    <tr class="tr1">
+                        <td rowspan="3"><b>WATER PROFILE</b></td>
+                        <td class="txcenter" style="background-color:#858585">a<sup>2</sup></td>
+                        <td>Total water needed (g)</td>
+                        <td>a<sup>2</sup> = j<sup>1</sup></td>
+                        <td>a<sup>2</sup> = (i<sup>1</sup> * a<sup>1</sup>) / 100</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">b<sup>2</sup></td>
+                        <td>Water in ingredients (g)</td>
+                        <td>b<sup>2</sup> = s<sup>1</sup> + w<sup>1</sup> + s<sup>2</sup> + w<sup>2</sup> + s<sup>3</sup> + w<sup>3</sup></td>
+                        <td>((((i<sup>1</sup> * b<sup>1</sup>) / 100) / ((100 - r<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * b<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * c<sup>1</sup>) / 100) / ((100 - v<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * c<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * d<sup>1</sup>) / 100) / ((100 - r<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * d<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * e<sup>1</sup>) / 100) / ((100 - v<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * e<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * f<sup>1</sup>) / 100) / ((100 - r<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * f<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * g<sup>1</sup>) / 100) / ((100 - v<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * g<sup>1</sup>) / 100))</td>
+                        <td>\( b_2 = \sum_{(x, y) \in \{(b_1, r_1), (c_1, v_1), (d_1, r_2), (e_1, v_2), (f_1, r_3), (g_1, v_3)\}} \frac{i_1 \cdot x \cdot y}{100 \cdot (100 - y)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">c<sup>2</sup></td>
+                        <td>Actual water needed (g)</td>
+                        <td>c<sup>2</sup> = a<sup>2</sup> - b<sup>2</sup></td>
+                        <td>c<sup>2</sup> = (i<sup>1</sup> * a<sup>1</sup> / 100) - (((((i<sup>1</sup> * b<sup>1</sup>) / 100) / ((100 - r<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * b<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * c<sup>1</sup>) / 100) / ((100 - v<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * c<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * d<sup>1</sup>) / 100) / ((100 - r<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * d<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * e<sup>1</sup>) / 100) / ((100 - v<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * e<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * f<sup>1</sup>) / 100) / ((100 - r<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * f<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * g<sup>1</sup>) / 100) / ((100 - v<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * g<sup>1</sup>) / 100)))</td>
+                        <td>\( c_2 = \frac{i_1 \cdot a_1}{100} - \sum_{(x, y) \in \{(b_1, r_1), (c_1, v_1), (d_1, r_2), (e_1, v_2), (f_1, r_3), (g_1, v_3)\}} \frac{i_1 \cdot x \cdot y}{100 \cdot (100 - y)} \)</td>
+                    </tr>
+                    <tr class="tr1">
+                        <td rowspan="8"><b>FINAL RECIPE</b></td>
+                        <td class="txcenter" style="background-color:#858585">d<sup>2</sup></td>
+                        <td>Total sub weight (g)</td>
+                        <td>d<sup>2</sup> = i<sup>1</sup></td>
+                        <td>d<sup>2</sup> = i<sup>1</sup></td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">e<sup>2</sup></td>
+                        <td>Water (g)</td>
+                        <td>e<sup>2</sup> = c<sup>2</sup></td>
+                        <td>e<sup>2</sup> = (i<sup>1</sup> * a<sup>1</sup> / 100) - (((((i<sup>1</sup> * b<sup>1</sup>) / 100) / ((100 - r<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * b<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * c<sup>1</sup>) / 100) / ((100 - v<sup>1</sup>) * 0.01)) - ((i<sup>1</sup> * c<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * d<sup>1</sup>) / 100) / ((100 - r<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * d<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * e<sup>1</sup>) / 100) / ((100 - v<sup>2</sup>) * 0.01)) - ((i<sup>1</sup> * e<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * f<sup>1</sup>) / 100) / ((100 - r<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * f<sup>1</sup>) / 100)) + ((((i<sup>1</sup> * g<sup>1</sup>) / 100) / ((100 - v<sup>3</sup>) * 0.01)) - ((i<sup>1</sup> * g<sup>1</sup>) / 100)))</td>
+                        <td>\( e_2 = \frac{i_1 \cdot a_1}{100} - \sum_{(x, y) \in \{(b_1, r_1), (c_1, v_1), (d_1, r_2), (e_1, v_2), (f_1, r_3), (g_1, v_3)\}} \frac{i_1 \cdot x \cdot y}{100 \cdot (100 - y)} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">f<sup>2</sup></td>
+                        <td>Ingredient 1 (g)</td>
+                        <td>f<sup>2</sup> = t<sup>1</sup></td>
+                        <td>f<sup>2</sup> = ((i<sup>1</sup> * b<sup>1</sup>) / 100) / ((100 - r<sup>1</sup>) * 0.01)</td>
+                        <td>\( f_2 = \frac{i_1 \cdot b_1}{100 - r_1} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">g<sup>2</sup></td>
+                        <td>Ingredient 2 (g)</td>
+                        <td>g<sup>2</sup> = x<sup>1</sup></td>
+                        <td>g<sup>2</sup> = ((i<sup>1</sup> * c<sup>1</sup>) / 100) / ((100 - v<sup>1</sup>) * 0.01)</td>
+                        <td>\( g_2 = \frac{i_1 \cdot c_1}{100 - v_1} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">h<sup>2</sup></td>
+                        <td>Ingredient 3 (g)</td>
+                        <td>h<sup>2</sup> = t<sup>2</sup></td>
+                        <td>h<sup>2</sup> = ((i<sup>1</sup> * d<sup>1</sup>) / 100) / ((100 - r<sup>2</sup>) * 0.01)</td>
+                        <td>\( h_2 = \frac{i_1 \cdot d_1}{100 - r_2} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">i<sup>2</sup></td>
+                        <td>Ingredient 4 (g)</td>
+                        <td>i<sup>2</sup> = x<sup>2</sup></td>
+                        <td>i<sup>2</sup> = ((i<sup>1</sup> * e<sup>1</sup>) / 100) / ((100 - v<sup>2</sup>) * 0.01)</td>
+                        <td>\( i_2 = \frac{i_1 \cdot e_1}{100 - v_2} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">j<sup>2</sup></td>
+                        <td>Ingredient 5 (g)</td>
+                        <td>j<sup>2</sup> = t<sup>3</sup></td>
+                        <td>j<sup>2</sup> = ((i<sup>1</sup> * f<sup>1</sup>) / 100) / ((100 - r<sup>3</sup>) * 0.01)</td>
+                        <td>\( j_2 = \frac{i_1 \cdot f_1}{100 - r_3} \)</td>
+                    </tr>
+                    <tr>
+                        <td class="txcenter" style="background-color:#858585">k<sup>2</sup></td>
+                        <td>Ingredient 6 (g)</td>
+                        <td>k<sup>2</sup> = x<sup>3</sup></td>
+                        <td>k<sup>2</sup> = ((i<sup>1</sup> * g<sup>1</sup>) / 100) / ((100 - v<sup>3</sup>) * 0.01)</td>
+                        <td>\( k_2 = \frac{i_1 \cdot g_1}{100 - v_3} \)</td>
+                    </tr>
+                </table>
+                <br>
+
+
+            </div>
+        </div>
+        <hr>
+
+
+<!--Site History & Future Plans-->
+        <div class="indent2">
+            <h2 id="hist"><img src="img/img2.png" width="30px" height="30px"> Site History & Future Plans</h2>
+            <div class="indent">
+                <div class="row">
+                    <div class="column">
+                        <h3>Site History</h3>
+                        <ul>
+                            <li><b>15 Mar 2024</b>- Page created.</li>
+                            <li><b>07 Oct 2024</b>- Page updated. Lime pasteurization table added.</li>
+                            <li><b></b>- Page updated. Calculator math correction and information added.</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Future Plans</h3>
+                        <ul>
+                            <li>Target ph lime pasteurization calculator</li>
+                            <li>Dark mode</li>
+                            <li>Spawning ratio calculator</li>
+                            <li>BE/PE calculator</li>
+                            <li>Media recipe calculator</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+
+
+
+        <hr class="s3">
+        <img class="footer" src="img/path8.png">
+    </body>
+</html>

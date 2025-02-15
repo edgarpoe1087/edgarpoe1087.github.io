@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workout Tracker</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #eee;
+      font-family: monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #fff;
+    }
+    .week-section {
+      margin-bottom: 20px;
+    }
+    .day-buttons button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #444;
+      color: #eee;
+      border: none;
+      border-radius: 5px;
+    }
+    .day-buttons button:hover {
+      background-color: #666;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #555;
+      padding: 5px;
+      text-align: center;
+    }
+    th {
+      background-color: #333;
+    }
+    .set-header {
+      font-weight: bold;
+    }
+    /* SET header colors */
+    .set1-header { background-color: #008000; }
+    .set2-header { background-color: #CCCC00; }
+    .set3-header { background-color: #FF8C00; }
+    .set4-header { background-color: #FF0000; }
+    /* Lighter colors for the cells below each SET header */
+    .set1-cell { background-color: #66bb66; }
+    .set2-cell { background-color: #FFFF99; }
+    .set3-cell { background-color: #FFB347; }
+    .set4-cell { background-color: #FF6666; }
+    select {
+      font-family: monospace;
+    }
+    .submit-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #444;
+      color: #eee;
+      border: none;
+      border-radius: 5px;
+    }
+    .submit-btn:hover {
+      background-color: #666;
+    }
+    /* Wrapper for drop-down animation */
+    #formWrapper {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <h1>Workout Tracker</h1>
+  <div id="navigation">
+    <!-- Week 1 -->
+    <div class="week-section">
+      <h2>Week 1</h2>
+      <div class="day-buttons">
+        <button onclick="loadForm('Week 1', 'Mon')">Mon</button>
+        <button onclick="loadForm('Week 1', 'Tue')">Tue</button>
+        <button onclick="loadForm('Week 1', 'Wed')">Wed</button>
+        <button onclick="loadForm('Week 1', 'Thu')">Thu</button>
+        <button onclick="loadForm('Week 1', 'Fri')">Fri</button>
+      </div>
+    </div>
+    <!-- Week 2 -->
+    <div class="week-section">
+      <h2>Week 2</h2>
+      <div class="day-buttons">
+        <button onclick="loadForm('Week 2', 'Mon')">Mon</button>
+        <button onclick="loadForm('Week 2', 'Tue')">Tue</button>
+        <button onclick="loadForm('Week 2', 'Wed')">Wed</button>
+        <button onclick="loadForm('Week 2', 'Thu')">Thu</button>
+        <button onclick="loadForm('Week 2', 'Fri')">Fri</button>
+      </div>
+    </div>
+    <!-- Week 3 -->
+    <div class="week-section">
+      <h2>Week 3</h2>
+      <div class="day-buttons">
+        <button onclick="loadForm('Week 3', 'Mon')">Mon</button>
+        <button onclick="loadForm('Week 3', 'Tue')">Tue</button>
+        <button onclick="loadForm('Week 3', 'Wed')">Wed</button>
+        <button onclick="loadForm('Week 3', 'Thu')">Thu</button>
+        <button onclick="loadForm('Week 3', 'Fri')">Fri</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container for the drop-down form -->
+  <div id="formContainer">
+    <!-- The drop-down wrapper (used for the slide-down animation) -->
+    <div id="formWrapper"></div>
+  </div>
+
+  <script>
+    /***** Data Structures *****/
+    // Define which pattern (A, B, or C) applies on each day of each week.
+    const schedule = {
+      "Week 1": { "Mon": "A", "Tue": "B", "Wed": "C", "Thu": "A", "Fri": "B" },
+      "Week 2": { "Mon": "C", "Tue": "A", "Wed": "B", "Thu": "C", "Fri": "A" },
+      "Week 3": { "Mon": "B", "Tue": "C", "Wed": "A", "Thu": "B", "Fri": "C" }
+    };
+    // Pattern A, B, and C muscle groups
+    const patterns = {
+      "A": ["PEC1", "PEC2", "PEC3", "TRI1", "TRI2", "TRI3", "SHO1", "SHO2", "SHO3"],
+      "B": ["BACK1", "BACK2", "BACK3", "BI1", "BI2", "BI3", "TRAP1", "TRAP2", "TRAP3", "AB1", "AB2"],
+      "C": ["QUAD1", "QUAD2", "HAM1", "HAM2", "GLUT1", "GLUT2", "GLUT3", "CALV1", "CALV2", "FORE1", "FORE2"]
+    };
+
+    // Map muscle prefixes to exercise dropdown options
+    const exerciseOptions = {
+      "PEC": [
+        "Bench press (machine)",
+        "Bench press (press)",
+        "Bench press (bb)",
+        "DB fly",
+        "Pushup (weighted)",
+        "Pec fly (forward)"
+      ],
+      "TRI": [
+        "Cable tricep pushdown (rope)",
+        "Cable tricep pushdown (straight)",
+        "Cable tricep pushdown (ez)",
+        "Reverse cable tricep pull (rope)",
+        "Reverse cable tricep pull (straight)",
+        "Reverse cable tricep pull (ez)",
+        "Dips (bw)",
+        "Dips (weighted)"
+      ],
+      "SHO": [
+        "Lat raise (cable)",
+        "Lat raise (db, kb)",
+        "Shoulder press (machine)"
+      ],
+      "BACK": [
+        "Lat pulldown (wide)",
+        "Lat pulldown (close)",
+        "Lat pulldown (row)",
+        "Seated cable row",
+        "DB row",
+        "Pull up (weighted)",
+        "Pull up (bw)"
+      ],
+      "BI": [
+        "Inclinded DB curl",
+        "Concentration curl",
+        "Cable curl (ez)",
+        "Cable curl (D ring)",
+        "Cable curl (straight)",
+        "Preacher curl"
+      ],
+      "TRAP": [
+        "Shrug (no bb)"
+      ],
+      "AB": [
+        "Plank (unweighted)",
+        "Plank (weighted)",
+        "Crunches (machine)",
+        "Crunches (bw)",
+        "Bike crunches"
+      ],
+      "QUAD": [
+        "Leg press (press)",
+        "Leg press (machine)",
+        "Goblet squat (db, kb)",
+        "Goblet squat (plate)"
+      ],
+      "HAM": [
+        "Leg extensions"
+      ],
+      "GLUT": [
+        "Hip thrust (db)",
+        "Hip thrust (bb)",
+        "Donkey kickback (band)",
+        "Lunges (db)"
+      ],
+      "CALV": [
+        "Calf raises"
+      ],
+      "FORE": [
+        "Wrist curl (db)",
+        "Wrist curl (fixed bb)",
+        "Reverse wrist curl (db)",
+        "Reverse wrist curl (fixed bb)"
+      ]
+    };
+
+    // Dropdown options for reps and weight
+    const repOptionsNormal = [8, 9, 10, 11, 12, 13, 14, 15];
+    const weightOptions = [10, 12.5, 15, 17.5, 20, 22.5, 25, 27.5, 30, 32.5, 35, 37.5, 40, 42.5, 45, 47.5, 50, 52.5, 55, 57.5, 60, 62.5, 65, 67.5, 70, 72.5, 75, 77.5, 80, 82.5, 85, 87.5, 90, 92.5, 95, 97.5, 100];
+    const repOptionsPlank = [];
+    for (let i = 20; i <= 60; i++) {
+      repOptionsPlank.push(i);
+    }
+    // Exercises that only have a rep dropdown (no weight)
+    const repOnlyExercises = ["Dips (bw)", "Pull up (bw)", "Plank (unweighted)", "Crunches (bw)", "Bike crunches"];
+
+    /***** Functions *****/
+    // This function builds the form for the given week and day,
+    // then inserts it into a wrapper that slides down.
+    function loadForm(week, day) {
+      const formWrapper = document.getElementById("formWrapper");
+      // Immediately collapse the wrapper (for subsequent animations)
+      formWrapper.style.maxHeight = "0px";
+      
+      // Clear any previous content
+      formWrapper.innerHTML = "";
+
+      // Create a title for the form
+      const formTitle = document.createElement("h3");
+      formTitle.textContent = week + " - " + day;
+
+      // Create the form element (update the form.action with your endpoint URL)
+      const form = document.createElement("form");
+      form.method = "post";
+      form.action = "https://script.google.com/macros/s/AKfycbxE5RM5kYr18VeV55ZRcZdRjvVUR9QwupFOisFTz1YWrhx82Yry6mFtsYn8jeZwgb-4/exec"; // Replace with your URL
+
+      // (Optional) Add hidden inputs for week and day
+      const weekInput = document.createElement("input");
+      weekInput.type = "hidden";
+      weekInput.name = "week";
+      weekInput.value = week;
+      form.appendChild(weekInput);
+
+      const dayInput = document.createElement("input");
+      dayInput.type = "hidden";
+      dayInput.name = "day";
+      dayInput.value = day;
+      form.appendChild(dayInput);
+
+      // Create table with two header rows
+      const table = document.createElement("table");
+
+      // Header row 1: empty for first 2 columns then SET headers
+      const thead = document.createElement("thead");
+      const headerRow1 = document.createElement("tr");
+      const emptyTh = document.createElement("th");
+      emptyTh.colSpan = 2;
+      headerRow1.appendChild(emptyTh);
+      const setHeaders = [
+        { label: "SET 1", class: "set1-header" },
+        { label: "SET 2", class: "set2-header" },
+        { label: "SET 3", class: "set3-header" },
+        { label: "SET 4", class: "set4-header" }
+      ];
+      setHeaders.forEach(set => {
+        const th = document.createElement("th");
+        th.colSpan = 2;
+        th.textContent = set.label;
+        th.classList.add("set-header", set.class);
+        headerRow1.appendChild(th);
+      });
+      thead.appendChild(headerRow1);
+
+      // Header row 2: column titles
+      const headerRow2 = document.createElement("tr");
+      const headers = ["Muscle", "Exercise", "Reps", "Weight", "Reps", "Weight", "Reps", "Weight", "Reps", "Weight"];
+      headers.forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        headerRow2.appendChild(th);
+      });
+      thead.appendChild(headerRow2);
+      table.appendChild(thead);
+
+      // Build table body rows – one per muscle group
+      const tbody = document.createElement("tbody");
+      // Determine the muscle group pattern for this week/day
+      const patternKey = schedule[week][day];
+      const muscles = patterns[patternKey];
+
+      muscles.forEach(muscle => {
+        const row = document.createElement("tr");
+
+        // Column 1: Muscle name with hidden input
+        const muscleCell = document.createElement("td");
+        muscleCell.textContent = muscle;
+        const muscleInput = document.createElement("input");
+        muscleInput.type = "hidden";
+        muscleInput.name = "muscle[]";
+        muscleInput.value = muscle;
+        muscleCell.appendChild(muscleInput);
+        row.appendChild(muscleCell);
+
+        // Column 2: Exercise dropdown (options depend on muscle prefix)
+        const exerciseCell = document.createElement("td");
+        const exerciseSelect = document.createElement("select");
+        exerciseSelect.name = "exercise[]";
+        exerciseSelect.classList.add("exercise-select");
+        // Blank option first
+        let blankOption = document.createElement("option");
+        blankOption.value = "";
+        blankOption.textContent = "";
+        exerciseSelect.appendChild(blankOption);
+        // Extract prefix (e.g., "PEC", "BACK")
+        const prefixMatch = muscle.match(/^[A-Z]+/);
+        const prefix = prefixMatch ? prefixMatch[0] : "";
+        const opts = exerciseOptions[prefix] || [];
+        opts.forEach(opt => {
+          const optionElem = document.createElement("option");
+          optionElem.value = opt;
+          optionElem.textContent = opt;
+          exerciseSelect.appendChild(optionElem);
+        });
+        exerciseCell.appendChild(exerciseSelect);
+        row.appendChild(exerciseCell);
+
+        // Create four sets – each with a rep and weight dropdown
+        for (let set = 1; set <= 4; set++) {
+          // Reps cell
+          const repCell = document.createElement("td");
+          repCell.classList.add("set" + set + "-cell");
+          const repSelect = document.createElement("select");
+          repSelect.name = "rep" + set + "[]";
+          repSelect.classList.add("rep-select");
+          repCell.appendChild(repSelect);
+          row.appendChild(repCell);
+
+          // Weight cell
+          const weightCell = document.createElement("td");
+          weightCell.classList.add("set" + set + "-cell");
+          const weightSelect = document.createElement("select");
+          weightSelect.name = "weight" + set + "[]";
+          weightSelect.classList.add("weight-select");
+          weightCell.appendChild(weightSelect);
+          row.appendChild(weightCell);
+        }
+        tbody.appendChild(row);
+
+        // When the exercise changes, update the rep/weight dropdowns for that row.
+        exerciseSelect.addEventListener("change", function() {
+          updateRow(row);
+        });
+        // Initialize the row dropdowns
+        updateRow(row);
+      });
+      table.appendChild(tbody);
+      form.appendChild(table);
+
+      // Submit button (all forms submit to the same Google Spreadsheet)
+      const submitButton = document.createElement("button");
+      submitButton.type = "submit";
+      submitButton.textContent = "Submit";
+      submitButton.classList.add("submit-btn");
+      form.appendChild(submitButton);
+
+      // Append title and form to the wrapper
+      formWrapper.appendChild(formTitle);
+      formWrapper.appendChild(form);
+
+      // Force the wrapper to expand (animate drop-down)
+      setTimeout(() => {
+        formWrapper.style.maxHeight = formWrapper.scrollHeight + "px";
+      }, 10);
+      
+      // Scroll the form into view
+      form.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Update the rep and weight dropdowns for a row based on the selected exercise.
+    function updateRow(row) {
+      const exerciseSelect = row.querySelector(".exercise-select");
+      const selectedExercise = exerciseSelect.value;
+      const isRepOnly = repOnlyExercises.includes(selectedExercise);
+      const usePlankReps = (selectedExercise === "Plank (unweighted)" || selectedExercise === "Plank (weighted)");
+      const repOpts = usePlankReps ? repOptionsPlank : repOptionsNormal;
+
+      // Update each rep dropdown in this row
+      row.querySelectorAll(".rep-select").forEach(select => {
+        const currentVal = select.value;
+        select.innerHTML = "";
+        // Blank option
+        let blankOption = document.createElement("option");
+        blankOption.value = "";
+        blankOption.textContent = "";
+        select.appendChild(blankOption);
+        repOpts.forEach(opt => {
+          const option = document.createElement("option");
+          option.value = opt;
+          option.textContent = opt;
+          select.appendChild(option);
+        });
+        if (repOpts.includes(parseInt(currentVal))) {
+          select.value = currentVal;
+        }
+      });
+
+      // Update each weight dropdown in this row – hide if rep-only exercise.
+      row.querySelectorAll(".weight-select").forEach(select => {
+        if (isRepOnly) {
+          select.style.display = "none";
+        } else {
+          select.style.display = "block";
+          const currentVal = select.value;
+          select.innerHTML = "";
+          // Blank option
+          let blankOption = document.createElement("option");
+          blankOption.value = "";
+          blankOption.textContent = "";
+          select.appendChild(blankOption);
+          weightOptions.forEach(opt => {
+            const option = document.createElement("option");
+            option.value = opt;
+            option.textContent = opt;
+            select.appendChild(option);
+          });
+          if (weightOptions.includes(parseFloat(currentVal))) {
+            select.value = currentVal;
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

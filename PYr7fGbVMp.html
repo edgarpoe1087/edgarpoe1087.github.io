@@ -1,0 +1,3003 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Workout Tracker</title>
+        <style>
+            body {
+                background-color: #222;
+                color: #eee;
+                font-family: monospace;
+                margin: 0;
+                padding: 20px;
+            }
+            h1, h2, h3 {
+                color: #fff;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+            th, td {
+                border: 1px solid #555;
+                padding: 5px;
+                text-align: center;
+            }
+            th {
+                background-color: #333;
+            }
+            select {
+                font-family: monospace;
+            }
+            .submit-btn {
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: #444;
+                color: #eee;
+                border: none;
+                border-radius: 5px;
+            }
+
+
+            /* Make header cells sticky */
+            thead th {
+                position: sticky;
+                top: 0;             /* Stick to the top */
+                z-index: 2;         /* Ensure header is above other cells */
+                background: #333;   /* Give a solid background */
+            }
+            /* Make the first column sticky */
+            tbody td:first-child,
+            thead th:first-child {
+                position: sticky;
+                left: 0;            /* Stick to the left */
+                z-index: 3;         /* Raise z-index so it appears on top */
+                background: #222;   /* Match the table’s background */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Pattern C</h1>
+        <h2>QUAD, HAM, CALV, FORE</h2>
+
+        <form method="post" action="https://script.google.com/macros/s/AKfycbwL_PR38geq5x535qWDzp_N4nSN77nbmNsuYOD5NudlEdtZ-KXonou_CWM8FocKUUM/exec">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="2" class="set1-header">SET 1</th>
+                        <th colspan="2" class="set2-header">SET 2</th>
+                        <th colspan="2" class="set3-header">SET 3</th>
+                        <th colspan="2" class="set4-header">SET 4</th>
+                    </tr>
+                    <tr>
+                        <th>Muscle</th>
+                        <th>Exercise</th>
+                        <th>Reps</th>
+                        <th>Weight</th>
+                        <th>Reps</th>
+                        <th>Weight</th>
+                        <th>Reps</th>
+                        <th>Weight</th>
+                        <th>Reps</th>
+                        <th>Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+<!--QUAD 1-->
+                    <tr>
+                        <td>QUAD 1<input type="hidden" name="muscle1" value="QUAD1"></td>
+                        <td>
+                            <select name="exercise1">
+                                <option value=""></option>
+                                <option value="Leg press (press)">Leg press (press)</option>
+                                <option value="Leg press (machine)">Leg press (machine)</option>
+                                <option value="Goblet squat (db, kb)">Goblet squat (db, kb)</option>
+                                <option value="Goblet squat (plate)">Goblet squat (plate)</option>
+                                <option value="Squat (bb)">Wide stance squat (bb)</option>
+                            </select>
+                        </td>
+<!--QUAD 1 reps and weights-->
+                        <td>
+                            <select name="reps1-1">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-1">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-1">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-1">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-1">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-1">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-1">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-1">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--QUAD 2-->
+                    <tr>
+                        <td>QUAD 2<input type="hidden" name="muscle2" value="QUAD2"></td>
+                        <td>
+                            <select name="exercise2">
+                                <option value=""></option>
+                                <option value="Leg press (press)">Leg press (press)</option>
+                                <option value="Leg press (machine)">Leg press (machine)</option>
+                                <option value="Goblet squat (db, kb)">Goblet squat (db, kb)</option>
+                                <option value="Goblet squat (plate)">Goblet squat (plate)</option>
+                                <option value="Squat (bb)">Wide stance squat (bb)</option>
+                            </select>
+                        </td>
+<!--QUAD 2 reps and weights-->
+                        <td>
+                            <select name="reps1-2">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-2">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-2">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-2">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-2">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-2">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-2">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-2">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--QUAD 3-->
+                    <tr>
+                        <td>QUAD 3<input type="hidden" name="muscle3" value="QUAD3"></td>
+                        <td>
+                            <select name="exercise3">
+                                <option value=""></option>
+                                <option value="Leg press (press)">Leg press (press)</option>
+                                <option value="Leg press (machine)">Leg press (machine)</option>
+                                <option value="Goblet squat (db, kb)">Goblet squat (db, kb)</option>
+                                <option value="Goblet squat (plate)">Goblet squat (plate)</option>
+                                <option value="Squat (bb)">Wide stance squat (bb)</option>
+                            </select>
+                        </td>
+<!--QUAD 3 reps and weights-->
+                        <td>
+                            <select name="reps1-3">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-3">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-3">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-3">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-3">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-3">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-3">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-3">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--QUAD 4-->
+                    <tr>
+                        <td>QUAD 4<input type="hidden" name="muscle[4" value="QUAD4"></td>
+                        <td>
+                            <select name="exercise4">
+                                <option value=""></option>
+                                <option value="Sissy squat">Sissy squat</option>
+                            </select>
+                        </td>
+<!--QUAD 4 reps and weights-->
+
+                        <td>
+                            <select name="reps1-4">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-4">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-4">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-4">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-4">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-4">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-4">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-4">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--HAM 1-->
+                    <tr>
+                        <td>HAM 1<input type="hidden" name="muscle5" value="HAM1"></td>
+                        <td>
+                            <select name="exercise5">
+                                <option value=""></option>
+                                <option value="Leg extensions (2)">Leg extensions (2)</option>
+                                <option value="Leg extensions (1)">Leg extensions (1)</option>
+                            </select>
+                        </td>
+<!--HAM 1 reps and weights-->
+                        <td>
+                            <select name="reps1-5">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-5">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-5">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-5">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-5">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-5">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-5">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-5">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--HAM 2-->
+                    <tr>
+                        <td>HAM 2<input type="hidden" name="muscle6" value="HAM2"></td>
+                        <td>
+                            <select name="exercise6">
+                                <option value=""></option>
+                                <option value="Leg extensions (2)">Leg extensions (2)</option>
+                                <option value="Leg extensions (1)">Leg extensions (1)</option>
+                            </select>
+                        </td>
+<!--HAM 2 reps and weights-->
+                        <td>
+                            <select name="reps1-6">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-6">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-6">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-6">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-6">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-6">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-6">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-6">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--HAM 3-->
+                    <tr>
+                        <td>HAM 3<input type="hidden" name="muscle7" value="HAM3"></td>
+                        <td>
+                            <select name="exercise7">
+                                <option value=""></option>
+                                <option value="Leg extensions (2)">Leg extensions (2)</option>
+                                <option value="Leg extensions (1)">Leg extensions (1)</option>
+                            </select>
+                        </td>
+<!--HAM 3 reps and weights-->
+                        <td>
+                            <select name="reps1-7">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-7">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-7">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-7">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-7">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-7">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-7">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-7">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--CALV 1-->
+                    <tr>
+                        <td>CALV 1<input type="hidden" name="muscle8" value="CALV1"></td>
+                        <td>
+                            <select name="exercise8">
+                                <option value=""></option>
+                                <option value="Seated calf raises (db)">Seated calf raises (db)</option>
+                                <option value="Seated calf raises (bb)">Seated calf raises (bb)</option>
+                                <option value="Standing calf raises (db)">Standing calf raises (db)</option>
+                                <option value="Standing calf raises (bb)">Standing calf raises (bb)</option>
+                            </select>
+                        </td>
+<!--CALV 1 reps and weights-->
+                        <td>
+                            <select name="reps1-8">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-8">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-8">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-8">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-8">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-8">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-8">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-8">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--CALV 2-->
+                    <tr>
+                        <td>CALV 2<input type="hidden" name="muscle9" value="CALV2"></td>
+                        <td>
+                            <select name="exercise9">
+                                <option value=""></option>
+                                <option value="Seated calf raises (db)">Seated calf raises (db)</option>
+                                <option value="Seated calf raises (bb)">Seated calf raises (bb)</option>
+                                <option value="Standing calf raises (db)">Standing calf raises (db)</option>
+                                <option value="Standing calf raises (bb)">Standing calf raises (bb)</option>
+                            </select>
+                        </td>
+<!--CALV 2 reps and weights-->
+                        <td>
+                            <select name="reps1-9">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-9">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-9">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-9">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-9">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-9">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-9">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-9">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--CALV 3-->
+                    <tr>
+                        <td>CALV 3<input type="hidden" name="muscle10" value="CALV3"></td>
+                        <td>
+                            <select name="exercise10">
+                                <option value=""></option>
+                                <option value="Seated calf raises (db)">Seated calf raises (db)</option>
+                                <option value="Seated calf raises (bb)">Seated calf raises (bb)</option>
+                                <option value="Standing calf raises (db)">Standing calf raises (db)</option>
+                                <option value="Standing calf raises (bb)">Standing calf raises (bb)</option>
+                            </select>
+                        </td>
+<!--CALV 3 reps and weights-->
+                        <td>
+                            <select name="reps1-10">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-10">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-10">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-10">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-10">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-10">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-10">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-10">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--FORE 1-->
+                    <tr>
+                        <td>FORE 1<input type="hidden" name="muscle11" value="FORE1"></td>
+                        <td>
+                            <select name="exercise11">
+                                <option value=""></option>
+                                <option value="Wrist curl (db)">Wrist curl (db)</option>
+                                <option value="Wrist curl (bb)">Wrist curl (bb)</option>
+                                <option value="Rear wrist curl (db)">Rear wrist curl (db)</option>
+                                <option value="Rear wrist curl (bb)">Rear wrist curl (bb)</option>
+                            </select>
+                        </td>
+<!--FORE 1 reps and weights-->
+                        <td>
+                            <select name="reps1-11">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-11">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-11">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-11">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-11">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-11">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-11">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-11">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+
+<!--FORE 2-->
+                    <tr>
+                        <td>FORE 2<input type="hidden" name="muscle12" value="FORE2"></td>
+                        <td>
+                            <select name="exercise12">
+                                <option value=""></option>
+                                <option value="Wrist curl (db)">Wrist curl (db)</option>
+                                <option value="Wrist curl (bb)">Wrist curl (bb)</option>
+                                <option value="Rear wrist curl (db)">Rear wrist curl (db)</option>
+                                <option value="Rear wrist curl (bb)">Rear wrist curl (bb)</option>
+                            </select>
+                        </td>
+<!--FORE 2 reps and weights-->
+                        <td>
+                            <select name="reps1-12">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights1-12">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps2-12">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights2-12">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps3-12">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights3-12">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="reps4-12">
+                                <option value=""></option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="weights4-12">
+                                <option value=""></option>
+                                <option value="10">10</option>
+                                <option value="12.5">12.5</option>
+                                <option value="15">15</option>
+                                <option value="17.5">17.5</option>
+                                <option value="20">20</option>
+                                <option value="22.5">22.5</option>
+                                <option value="25">25</option>
+                                <option value="27.5">27.5</option>
+                                <option value="30">30</option>
+                                <option value="32.5">32.5</option>
+                                <option value="35">35</option>
+                                <option value="37.5">37.5</option>
+                                <option value="40">40</option>
+                                <option value="42.5">42.5</option>
+                                <option value="45">45</option>
+                                <option value="47.5">47.5</option>
+                                <option value="50">50</option>
+                                <option value="52.5">52.5</option>
+                                <option value="55">55</option>
+                                <option value="57.5">57.5</option>
+                                <option value="60">60</option>
+                                <option value="62.5">62.5</option>
+                                <option value="65">65</option>
+                                <option value="67.5">67.5</option>
+                                <option value="70">70</option>
+                                <option value="72.5">72.5</option>
+                                <option value="75">75</option>
+                                <option value="77.5">77.5</option>
+                                <option value="80">80</option>
+                                <option value="82.5">82.5</option>
+                                <option value="85">85</option>
+                                <option value="87.5">87.5</option>
+                                <option value="90">90</option>
+                                <option value="92.5">92.5</option>
+                                <option value="95">95</option>
+                                <option value="97.5">97.5</option>
+                                <option value="100">100</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </body>
+</html>

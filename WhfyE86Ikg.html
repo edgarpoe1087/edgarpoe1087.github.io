@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Workout Tracker</title>
+        <style>
+            body {
+                background-color: #222;
+                color: #eee;
+                font-family: monospace;
+                margin: 0;
+                padding: 20px;
+            }
+            h1, h2, h3 {
+                color: #fff;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+            th, td {
+                border: 1px solid #555;
+                padding: 5px;
+                text-align: center;
+            }
+            th {
+                background-color: #333;
+            }
+            select {
+                font-family: monospace;
+            }
+            .submit-btn
+            .macrocalc {
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: #444;
+                color: #eee;
+                border: none;
+                border-radius: 5px;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                var src = document.getElementById("wt1"),
+                    dst = document.getElementById("wt2");
+                src.addEventListener('input', function() {
+                    dst.value = src.value;
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Weight Tracker & Macro Calculator</h1>
+        <br>
+        <h2>Weight Tracker</h2>
+        <form method="post" action="">
+            <p>Weight: <input type="hidden"/>
+            <input type="tel" id="wt1" name="weight" pattern="[0-9]*"/>
+            <button type="submit" class="submit-btn">Submit</button></p>
+        </form>
+        <br>
+        <br>
+        <h2>Macro Calculator</h2>
+        <h3>Maintenance calories</h3>
+        <table>
+            <tr>
+                <td>Weight</td>
+                <td>Age</td>
+                <td>Height (in)</td>
+                <td>Activity Level</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="wt2" readonly/>
+                </td>
+                <td>
+                    <input type="tel" id="" pattern="[0-9]*"/>
+                </td>
+                <td>
+                    <input type="tel" id="" pattern="[0-9]*"/>
+                </td>
+                <td>
+                    <select>
+                        <option></option>
+                        <option value="1.2">Sedentary</option>
+                        <option value="1.375">Lightly active</option>
+                        <option value="1.55">Moderately active</option>
+                        <option value="1.725">Very active</option>
+                        <option value="1.9">Extra active</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="button" class="macrocalc" onclick="macroCalc()">Calculate</button>
+        <br>
+        <p>Select ratio:
+            <select name="ratio">
+                <option></option>
+                <option value="30-40-30">30:40:30</option>
+                <option value="40-30-30">40:30:30</option>
+                <option value="40-40-20">40:40:20</option>
+            </select></p>
+        <table>
+            <tr>
+                <td>Goal</td>
+                <td>Calories</td>
+                <td>Protein</td>
+                <td>Carbs</td>
+                <td>Fat</td>
+            </tr>
+            <tr>
+                <td>Maintenance</td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+            </tr>
+            <tr>
+                <td>Bulk (+250 cal)</td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+            </tr>
+            <tr>
+                <td>Bulk (+500 cal)</td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+            </tr>
+            <tr>
+                <td>Cut (-250 cal)</td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+            </tr>
+            <tr>
+                <td>Cut (-500 cal)</td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+                <td><input type="text" id="" readonly></td>
+            </tr>
+        </table>
+    </body>
+</html>

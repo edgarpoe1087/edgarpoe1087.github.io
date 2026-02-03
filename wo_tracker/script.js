@@ -79,6 +79,12 @@ function formatExerciseLabel(raw) {
     lungeback: "Lunges (backward)",
     dbhamcurl: "DB Ham Curl",
     seatcalfraise: "Seated Calf Raises",
+    sandcarry: "Sandbag Carries",
+    deadweightlift: "Dead Weight Lifts",
+    sandoverhead: "Sandbag Overheads",
+    sackdrag: "Sack Drags",
+    ropepull: "Rope Pull",
+    blockstack: "Block Stacks",
   };
   return map[raw] || raw; // Fallback to original name
 }

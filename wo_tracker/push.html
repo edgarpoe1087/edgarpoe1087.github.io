@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workout Tracker</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+<!-- Step 1: Pushups -->
+        <div class="step" id="step-0">
+            <h2>Pushups</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="pushups_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="pushups_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="pushups_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="pushups_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="pushups_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="pushups_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 2: DB Flyes + Tri Pulldown -->
+        <div class="step" id="step-1" style="display:none">
+            <h2>DB Flyes</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbfly_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbfly_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbfly_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbfly_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbfly_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbfly_r3"></label>
+
+            <h2>Tri Pulldown</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="tripull_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="tripull_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="tripull_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="tripull_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="tripull_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="tripull_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 3: Incline DB Press -->
+        <div class="step" id="step-2" style="display:none">
+            <h2>Incline DB Press</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="inclinepress_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="inclinepress_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="inclinepress_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="inclinepress_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="inclinepress_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="inclinepress_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 4: DB Hex Press -->
+        <div class="step" id="step-3" style="display:none">
+            <h2>DB Hex Press</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="hexpress_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="hexpress_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="hexpress_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="hexpress_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="hexpress_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="hexpress_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 5: DB Kickback + Lat Raises -->
+        <div class="step" id="step-4" style="display:none">
+            <h2>DB Kickback</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbkick_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbkick_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbkick_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbkick_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbkick_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbkick_r3"></label>
+
+            <h2>Lat Raises</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="latraise_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="latraise_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="latraise_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="latraise_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="latraise_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="latraise_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 6: Bent Over Reverse Flyes -->
+        <div class="step" id="step-5" style="display:none">
+            <h2>Bent Over Reverse Flyes</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="bentoverfly_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="bentoverfly_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="bentoverfly_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="bentoverfly_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="bentoverfly_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="bentoverfly_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 7: Rollup + Twist + Plate Hold -->
+        <div class="step" id="step-6" style="display:none">
+            <h2>Rollups (front/back)</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="rollup1_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="rollup1_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="rollup1_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="rollup1_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="rollup1_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="rollup1_r3"></label>
+
+            <h2>Twists</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="twist1_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="twist1_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="twist1_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="twist1_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="twist1_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="twist1_r3"></label>
+
+            <h2>Plate Holds</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="platehold1_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="platehold1_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="platehold1_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="platehold1_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="platehold1_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="platehold1_r3"></label>
+            <button onclick="submitWorkout()">Submit</button>
+            <p id="submit-status"></p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

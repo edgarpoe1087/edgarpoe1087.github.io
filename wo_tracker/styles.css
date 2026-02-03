@@ -1,0 +1,39 @@
+body {
+    max-width: 400px;
+    margin: 40px auto;
+    text-align: left;
+    padding: 20px;
+    font-family: monospace;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+h2, h3 {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    background: #2e2e2e;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+button {
+    padding: 12px;
+    font-size: 1rem;
+    margin-top: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

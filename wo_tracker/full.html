@@ -8,9 +8,9 @@
     </head>
     <body>
 
-<!-- Step 1: Sandbag Carries -->
+<!-- Step 1: Sandbag Bear Hug Carries -->
         <div class="step" id="step-0">
-            <h2>Sandbag Carries</h2>
+            <h2>Sandbag Bear Hug Carries</h2>
             <label>Set 1 - Weight: <input class="num-input" type="number" name="sandcarry_w1"></label>
             <label>Set 1 - Reps: <input class="num-input" type="number" name="sandcarry_r1"></label>
             <label>Set 2 - Weight: <input class="num-input" type="number" name="sandcarry_w2"></label>
@@ -20,15 +20,15 @@
             <button onclick="nextStep()">Next</button>
         </div>
 
-<!-- Step 2: Dead Weight Lifts -->
+<!-- Step 2: Front Sandbag Carries -->
         <div class="step" id="step-1" style="display:none">
-            <h2>Dead Weight Lifts</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="deadweightlift_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="deadweightlift_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="deadweightlift_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="deadweightlift_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="deadweightlift_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="deadweightlift_r3"></label>
+            <h2>Front Sandbag Carries</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="frontbagcarry_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="frontbagcarry_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="frontbagcarry_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="frontbagcarry_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="frontbagcarry_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="frontbagcarry_r3"></label>
             <button onclick="nextStep()">Next</button>
         </div>
 
@@ -44,20 +44,8 @@
             <button onclick="nextStep()">Next</button>
         </div>
 
-<!-- Step 4: Sack Drags -->
+<!-- Step 4: Rope Pulls -->
         <div class="step" id="step-3" style="display:none">
-            <h2>Sack Drags</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="sackdrag_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="sackdrag_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="sackdrag_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="sackdrag_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="sackdrag_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="sackdrag_r3"></label>
-            <button onclick="nextStep()">Next</button>
-        </div>
-
-<!-- Step 5: Rope Pulls -->
-        <div class="step" id="step-4" style="display:none">
             <h2>Rope Pulls</h2>
             <label>Set 1 - Weight: <input class="num-input" type="number" name="ropepull_w1"></label>
             <label>Set 1 - Reps: <input class="num-input" type="number" name="ropepull_r1"></label>
@@ -68,8 +56,8 @@
             <button onclick="nextStep()">Next</button>
         </div>
 
-<!-- Step 6: Block Stacks -->
-        <div class="step" id="step-5" style="display:none">
+<!-- Step 5: Block Stacks -->
+        <div class="step" id="step-4" style="display:none">
             <h2>Block Stacks</h2>
             <label>Set 1 - Weight: <input class="num-input" type="number" name="blockstack_w1"></label>
             <label>Set 1 - Reps: <input class="num-input" type="number" name="blockstack_r1"></label>
@@ -77,6 +65,30 @@
             <label>Set 2 - Reps: <input class="num-input" type="number" name="blockstack_r2"></label>
             <label>Set 3 - Weight: <input class="num-input" type="number" name="blockstack_w3"></label>
             <label>Set 3 - Reps: <input class="num-input" type="number" name="blockstack_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 6: Dead Weight Lifts -->
+        <div class="step" id="step-5" style="display:none">
+            <h2>Dead Weight Lifts</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="deadweightlift_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="deadweightlift_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="deadweightlift_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="deadweightlift_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="deadweightlift_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="deadweightlift_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 7: Sack Drags -->
+        <div class="step" id="step-5" style="display:none">
+            <h2>Sack Drags</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="sackdrag_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="sackdrag_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="sackdrag_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="sackdrag_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="sackdrag_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="sackdrag_r3"></label>
             <button onclick="submitWorkout()">Submit</button>
             <p id="submit-status"></p>
         </div>

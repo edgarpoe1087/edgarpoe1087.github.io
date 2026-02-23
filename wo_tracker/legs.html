@@ -8,35 +8,15 @@
     </head>
     <body>
 
-<!-- Step 1: DB Squats + Plate Holds -->
+<!-- Step 1: RDL + Rollups -->
         <div class="step" id="step-0">
-            <h2>DB Squats</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbsquat_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbsquat_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbsquat_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbsquat_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbsquat_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbsquat_r3"></label>
-
-            <h2>Plate Holds</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="platehold2_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="platehold2_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="platehold2_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="platehold2_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="platehold2_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="platehold2_r3"></label>
-            <button onclick="nextStep()">Next</button>
-        </div>
-
-<!-- Step 2: Goblet Squats + Rollups -->
-        <div class="step" id="step-1" style="display:none">
-            <h2>Goblet Squats</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="gobletsquat_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="gobletsquat_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="gobletsquat_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="gobletsquat_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="gobletsquat_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="gobletsquat_r3"></label>
+            <h2>RDLs</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="rdl_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="rdl_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="rdl_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="rdl_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="rdl_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="rdl_r3"></label>
 
             <h2>Rollups</h2>
             <label>Set 1 - Weight: <input class="num-input" type="number" name="rollup3_w1"></label>
@@ -48,15 +28,15 @@
             <button onclick="nextStep()">Next</button>
         </div>
 
-<!-- Step 3: DB Step Ups + Twists -->
-        <div class="step" id="step-2" style="display:none">
-            <h2>DB Step Ups</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbstepup_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbstepup_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbstepup_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbstepup_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbstepup_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbstepup_r3"></label>
+<!-- Step 2: Goblet Squats + Twists -->
+        <div class="step" id="step-1" style="display:none">
+            <h2>Goblet Squats</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="gobletsquat_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="gobletsquat_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="gobletsquat_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="gobletsquat_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="gobletsquat_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="gobletsquat_r3"></label>
 
             <h2>Twists</h2>
             <label>Set 1 - Weight: <input class="num-input" type="number" name="twist2_w1"></label>
@@ -68,15 +48,55 @@
             <button onclick="nextStep()">Next</button>
         </div>
 
-<!-- Step 4: RDLs + Standing Calf Raises -->
+<!-- Step 3: DB Split Squat + DB Swings -->
+        <div class="step" id="step-2" style="display:none">
+            <h2>DB Split Squats</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbsplitsquat_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbsplitsquat_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbsplitsquat_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbsplitsquat_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbsplitsquat_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbsplitsquat_r3"></label>
+
+            <h2>DB Swings</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbswing_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbswing_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbswing_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbswing_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbswing_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbswing_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 4: DB Step Ups + Plate Holds -->
         <div class="step" id="step-3" style="display:none">
-            <h2>RDLs</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="rdl_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="rdl_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="rdl_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="rdl_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="rdl_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="rdl_r3"></label>
+            <h2>DB Step Ups</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbstepup_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbstepup_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbstepup_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbstepup_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbstepup_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbstepup_r3"></label>
+
+            <h2>Plate Holds</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="platehold2_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="platehold2_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="platehold2_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="platehold2_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="platehold2_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="platehold2_r3"></label>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+<!-- Step 5: DB Glute Bridges + Standing Calf Raises -->
+        <div class="step" id="step-4" style="display:none">
+            <h2>DB Glute Bridges</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="glutebridge_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="glutebridge_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="glutebridge_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="glutebridge_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="glutebridge_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="glutebridge_r3"></label>
 
             <h2>Standing Calf Raises</h2>
             <label>Set 1 - Weight: <input class="num-input" type="number" name="standcalfraise_w1"></label>
@@ -88,43 +108,15 @@
             <button onclick="nextStep()">Next</button>
         </div>
 
-<!-- Step 5: Lunges (foreward) + Lunges (backward) -->
-        <div class="step" id="step-4" style="display:none">
-            <h2>Lunges (foreward)</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="lungefore_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="lungefore_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="lungefore_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="lungefore_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="lungefore_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="lungefore_r3"></label>
-
-            <h2>Lunges (backward)</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="lungeback_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="lungeback_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="lungeback_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="lungeback_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="lungeback_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="lungeback_r3"></label>
-            <button onclick="nextStep()">Next</button>
-        </div>
-
-<!-- Step 6: DB Ham Curls + Seated Calf Raises -->
+<!-- Step 6: Reverse Standing Calf Raises -->
         <div class="step" id="step-5" style="display:none">
-            <h2>DB Ham Curls</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="dbhamcurl_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="dbhamcurl_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="dbhamcurl_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="dbhamcurl_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="dbhamcurl_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="dbhamcurl_r3"></label>
-
-            <h2>Seated Calf Raises</h2>
-            <label>Set 1 - Weight: <input class="num-input" type="number" name="seatcalfraise_w1"></label>
-            <label>Set 1 - Reps: <input class="num-input" type="number" name="seatcalfraise_r1"></label>
-            <label>Set 2 - Weight: <input class="num-input" type="number" name="seatcalfraise_w2"></label>
-            <label>Set 2 - Reps: <input class="num-input" type="number" name="seatcalfraise_r2"></label>
-            <label>Set 3 - Weight: <input class="num-input" type="number" name="seatcalfraise_w3"></label>
-            <label>Set 3 - Reps: <input class="num-input" type="number" name="seatcalfraise_r3"></label>
+            <h2>Reverse Standing Calf Raises</h2>
+            <label>Set 1 - Weight: <input class="num-input" type="number" name="revstandcalfraise_w1"></label>
+            <label>Set 1 - Reps: <input class="num-input" type="number" name="revstandcalfraise_r1"></label>
+            <label>Set 2 - Weight: <input class="num-input" type="number" name="revstandcalfraise_w2"></label>
+            <label>Set 2 - Reps: <input class="num-input" type="number" name="revstandcalfraise_r2"></label>
+            <label>Set 3 - Weight: <input class="num-input" type="number" name="revstandcalfraise_w3"></label>
+            <label>Set 3 - Reps: <input class="num-input" type="number" name="revstandcalfraise_r3"></label>
             <button onclick="submitWorkout()">Submit</button>
             <p id="submit-status"></p>
         </div>

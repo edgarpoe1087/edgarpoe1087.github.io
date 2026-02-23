@@ -8,6 +8,10 @@ body {
     color: white;
 }
 
+a {
+    color: white;
+}
+
 h2, h3 {
     margin-top: 20px;
 }
@@ -36,4 +40,13 @@ button {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+}
+
+.start {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.start h1 {
+    color: darkred;
 }

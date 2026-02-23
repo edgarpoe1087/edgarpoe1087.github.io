@@ -50,3 +50,13 @@ button {
 .start h1 {
     color: darkred;
 }
+
+.pair {
+    display: flex;
+    gap: 26px;
+}
+
+.pair label {
+    display: flex;
+    flex-direction: column;
+}

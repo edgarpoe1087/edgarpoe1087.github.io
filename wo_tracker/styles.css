@@ -1,6 +1,6 @@
 body {
     max-width: 400px;
-    margin: 40px auto;
+    margin: 16px auto;
     text-align: left;
     padding: 20px;
     font-family: monospace;
@@ -23,7 +23,7 @@ label {
 
 input {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     margin-top: 4px;
     background: #2e2e2e;
     color: white;
@@ -32,7 +32,7 @@ input {
 }
 
 button {
-    padding: 12px;
+    padding: 14px;
     font-size: 1rem;
     margin-top: 20px;
     background: #007bff;
@@ -42,21 +42,17 @@ button {
     cursor: pointer;
 }
 
-.start {
-    text-align: center;
-    font-size: 2rem;
-}
-
-.start h1 {
-    color: darkred;
-}
-
 .pair {
     display: flex;
-    gap: 26px;
+    gap: 40px;
+    margin-bottom: 12px;
 }
 
 .pair label {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.pair input {
+    width: 100%;
 }

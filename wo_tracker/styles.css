@@ -56,3 +56,7 @@ button {
 .pair input {
     width: 100%;
 }
+
+.start {
+    font-size: 2rem;
+}

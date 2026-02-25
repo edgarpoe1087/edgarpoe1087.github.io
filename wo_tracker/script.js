@@ -1,82 +1,51 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxGGsMncKNaH_5mUZnHA2v2vQQXZdnXhC2N4i4XSutWBaPIQnM5wi5bZ-SEzO9E8-p2/exec";
-const CLEAR_AFTER_SUBMIT = true;
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwJvuxYcDG7NzxMT5L3CqwjfAMqAtc0rjIIyLhpscJsCgl-FrCBd1vwbpmccim1rDfA/exec"; // must end with /exec
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("wo_tracker");
-  if (!form) return;
-
-  const status = document.createElement("div");
-  status.style.marginTop = "12px";
-  form.appendChild(status);
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    setStatus(status, "Submitting...", "info");
-    if (submitBtn) submitBtn.disabled = true;
+    // Build a plain object of all fields
+    const fd = new FormData(form);
+    const payload = {};
+    for (const [key, value] of fd.entries()) {
+      // Convert numeric strings to numbers when possible (optional)
+      // Keep blanks as "" so columns stay aligned
+      if (value === "") {
+        payload[key] = "";
+      } else if (!isNaN(value) && value.trim() !== "") {
+        payload[key] = Number(value);
+      } else {
+        payload[key] = value;
+      }
+    }
+
+    // Add a date/time stamp (ISO). You can also format it differently.
+    payload.date = new Date().toISOString();
 
     try {
-      const payload = formToObject(form);
-
-      // Add timestamps
-      const now = new Date();
-      payload.date = now.toISOString().slice(0, 10);      // YYYY-MM-DD
-      payload.timestamp = now.toISOString();              // ISO
-
       const res = await fetch(SCRIPT_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
+        redirect: "follow",
       });
 
       const text = await res.text();
-      if (!res.ok) throw new Error(`HTTP ${res.status}: ${text}`);
 
-      setStatus(status, "Saved ✅", "success");
-
-      if (CLEAR_AFTER_SUBMIT) {
-        form.querySelectorAll('input[type="number"]').forEach(i => (i.value = ""));
+      if (!res.ok || !text.toLowerCase().includes("success")) {
+        console.error("Server response:", text);
+        alert("Error saving: " + text);
+        return;
       }
+
+      alert("Saved!");
+      // Optional: clear only the number inputs, keep hidden fields
+      form.querySelectorAll('input[type="number"]').forEach((i) => (i.value = ""));
     } catch (err) {
       console.error(err);
-      setStatus(status, "Error saving ❌ (check console)", "error");
-    } finally {
-      if (submitBtn) submitBtn.disabled = false;
+      alert("Error saving (network): " + err.message);
     }
   });
 });
-
-function formToObject(form) {
-  const fd = new FormData(form);
-  const obj = {};
-
-  for (const [k, v] of fd.entries()) {
-    // Keep "0" as valid; convert "" to ""
-    obj[k] = typeof v === "string" ? v.trim() : v;
-  }
-  return obj;
-}
-
-function setStatus(el, msg, type) {
-  el.textContent = msg;
-  el.style.padding = msg ? "10px 12px" : "0";
-  el.style.borderRadius = "6px";
-
-  if (!msg) {
-    el.style.border = "none";
-    el.style.background = "transparent";
-    return;
-  }
-
-  if (type === "success") {
-    el.style.border = "1px solid #2d6a2d";
-    el.style.background = "#153015";
-  } else if (type === "error") {
-    el.style.border = "1px solid #7a2a2a";
-    el.style.background = "#2a1212";
-  } else {
-    el.style.border = "1px solid #444";
-    el.style.background = "#232323";
-  }
-}

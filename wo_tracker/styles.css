@@ -58,5 +58,19 @@ button {
 }
 
 .start {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+td, th {
+    padding: 8px;
+    text-align: center;
 }

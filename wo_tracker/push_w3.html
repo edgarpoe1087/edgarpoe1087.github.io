@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workout Tracker</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <form id="wo_tracker" method="post" action="https://script.google.com/macros/s/AKfycbxaIyHxfnqyHzmPMVQa4bOBsJm73rmiyUi6nfPPOEeW53oTLuAdHfootIGViTicktaW/exec">
+            <input type="hidden" name="day" value="PUSH">
+
+<!-- Pushups + Rollups -->
+            <h2>Pushups</h2>
+            <input type="hidden" name="ex1" value="pushups">
+            <input type="hidden" name="musc1" value="chest">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w1"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r1"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w2"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r2"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w3"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r3"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w4"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r4"></label>
+            </div>
+
+            <h2>Rollups</h2>
+            <input type="hidden" name="ex2" value="rollups">
+            <input type="hidden" name="musc2" value="fore">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w5"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r5"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w6"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r6"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w7"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r7"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w8"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r8"></label>
+            </div>
+
+<!-- DB Flyes + Twist -->
+            <h2>DB Flyes</h2>
+            <input type="hidden" name="ex3" value="dbflyes">
+            <input type="hidden" name="musc3" value="chest">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w9"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r9"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w10"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r10"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w11"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r11"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w12"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r12"></label>
+            </div>
+
+            <h2>Twist</h2>
+            <input type="hidden" name="ex4" value="twist">
+            <input type="hidden" name="musc4" value="fore">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w13"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r13"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w14"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r14"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w15"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r15"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w16"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r16"></label>
+            </div>
+
+<!--Incline DB Press + Plate Holds -->
+            <h2>Incline DB Press</h2>
+            <input type="hidden" name="ex5" value="inclinedbpress">
+            <input type="hidden" name="musc5" value="chest">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w17"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r17"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w18"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r18"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w19"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r19"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w20"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r20"></label>
+            </div>
+
+            <h2>Plate Holds</h2>
+            <input type="hidden" name="ex6" value="plateholds">
+            <input type="hidden" name="musc6" value="fore">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w21"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r21"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w22"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r22"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w23"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r23"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w24"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r24"></label>
+            </div>
+
+<!-- Tri Pulldown + Seated Overhead DB Press -->
+            <h2>Tri Pulldown</h2>
+            <input type="hidden" name="ex7" value="tripulldown">
+            <input type="hidden" name="musc7" value="tri">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w25"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r25"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w26"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r26"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w27"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r27"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w28"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r28"></label>
+            </div>
+
+            <h2>Seated Overhead DB Press</h2>
+            <input type="hidden" name="ex8" value="seatedoverheaddbpress">
+            <input type="hidden" name="musc8" value="delt">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w29"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r29"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w30"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r30"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w31"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r31"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w32"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r32"></label>
+            </div>
+
+<!-- Standing Tri Extensions + Lat Raises -->
+            <h2>Standing Tri Extensions</h2>
+            <input type="hidden" name="ex9" value="standingtriextensions">
+            <input type="hidden" name="musc9" value="tri">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w33"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r33"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w34"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r34"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w35"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r35"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w36"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r36"></label>
+            </div>
+
+            <h2>Lat Raises</h2>
+            <input type="hidden" name="ex10" value="latraises">
+            <input type="hidden" name="musc10" value="delt">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w37"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r37"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w38"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r38"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w39"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r39"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w40"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r40"></label>
+            </div>
+
+<!-- Bench Dips -->
+            <h2>Bench Dips</h2>
+            <input type="hidden" name="ex11" value="benchdips">
+            <input type="hidden" name="musc11" value="tri">
+            <div class="pair">
+                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w41"></label>
+                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r41"></label>
+            </div>
+            <div class="pair">
+                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w42"></label>
+                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r42"></label>
+            </div>
+            <div class="pair">
+                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w43"></label>
+                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r43"></label>
+            </div>
+            <div class="pair">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w44"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r44"></label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

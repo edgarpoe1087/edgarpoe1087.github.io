@@ -11,7 +11,7 @@
         <form id="wo_tracker" method="post" action="https://script.google.com/macros/s/AKfycbxaIyHxfnqyHzmPMVQa4bOBsJm73rmiyUi6nfPPOEeW53oTLuAdHfootIGViTicktaW/exec">
             <input type="hidden" name="day" value="PUSH">
 
-<!-- RDL + Rollups -->
+<!-- RDL + Plate Holds -->
             <h2>RDL</h2>
             <input type="hidden" name="ex1" value="rdl">
             <input type="hidden" name="musc1" value="ham">
@@ -28,12 +28,12 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r3"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w4">
-                <input type="hidden" name="r4">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w4"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r4"></label>
             </div>
 
-            <h2>Rollups</h2>
-            <input type="hidden" name="ex2" value="rollups">
+            <h2>Plate Holds</h2>
+            <input type="hidden" name="ex2" value="plateholds">
             <input type="hidden" name="musc2" value="fore">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w5"></label>
@@ -48,11 +48,11 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r7"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w8">
-                <input type="hidden" name="r8">
+                <label>Set 4 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w8"></label>
+                <label>Set 4 - Reps: <input class="num-input" type="number" min="0" name="r8"></label>
             </div>
 
-<!-- DB Step Ups + Twist -->
+<!-- DB Step Ups + Rollups -->
             <h2>DB Step Ups</h2>
             <input type="hidden" name="ex3" value="dbstepups">
             <input type="hidden" name="musc3" value="glute">
@@ -69,12 +69,12 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r11"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w12">
-                <input type="hidden" name="r12">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
-            <h2>Twist</h2>
-            <input type="hidden" name="ex4" value="twist">
+            <h2>Rollups</h2>
+            <input type="hidden" name="ex4" value="rollups">
             <input type="hidden" name="musc4" value="fore">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w13"></label>
@@ -89,13 +89,13 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r15"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w16">
-                <input type="hidden" name="r16">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
-<!-- DB Split Squat + Plate Holds -->
-            <h2>DB Split Squat</h2>
-            <input type="hidden" name="ex5" value="dbsplitsquat">
+<!-- Bulgarian Split Squats + Single-Leg RDL -->
+            <h2>Bulgarian Split Squats</h2>
+            <input type="hidden" name="ex5" value="bulgariansplitsquats">
             <input type="hidden" name="musc5" value="quad">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w17"></label>
@@ -110,13 +110,13 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r19"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w20">
-                <input type="hidden" name="r20">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
-            <h2>Plate Holds</h2>
-            <input type="hidden" name="ex6" value="plateholds">
-            <input type="hidden" name="musc6" value="glute">
+            <h2>Single-Leg RDL</h2>
+            <input type="hidden" name="ex6" value="singlelegrdl">
+            <input type="hidden" name="musc6" value="ham">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w21"></label>
                 <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r21"></label>
@@ -130,8 +130,8 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r23"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w24">
-                <input type="hidden" name="r24">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
 <!-- Sandbag Squat + Standing Calf Raises -->
@@ -151,8 +151,8 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r27"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w28">
-                <input type="hidden" name="r28">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
             <h2>Standing Calf Raises</h2>
@@ -171,14 +171,14 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r31"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w32">
-                <input type="hidden" name="r32">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
-<!-- Nordic Hamstring Curls + Goblet Squat -->
-            <h2>Nordic Hamstring Curls</h2>
-            <input type="hidden" name="ex9" value="nordichamstringcurls">
-            <input type="hidden" name="musc9" value="ham">
+<!-- Goblet Squat + Seated Calf Raises -->
+            <h2>Goblet Squat</h2>
+            <input type="hidden" name="ex9" value="gobletsquat">
+            <input type="hidden" name="musc9" value="glute">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w33"></label>
                 <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r33"></label>
@@ -192,13 +192,13 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r35"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w36">
-                <input type="hidden" name="r36">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
-            <h2>Goblet Squat</h2>
-            <input type="hidden" name="ex10" value="gobletsquat">
-            <input type="hidden" name="musc10" value="glute">
+            <h2>Seated Calf Raises</h2>
+            <input type="hidden" name="ex10" value="seatedcalfraises">
+            <input type="hidden" name="musc10" value="calf">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w37"></label>
                 <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r37"></label>
@@ -212,14 +212,14 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r39"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w40">
-                <input type="hidden" name="r40">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
-<!-- Hip Thrusts + Seated Calf Raises -->
-            <h2>Hip Thrusts</h2>
-            <input type="hidden" name="ex11" value="hipthrusts">
-            <input type="hidden" name="musc11" value="glute">
+<!-- Heel-Elevated Squat + Hip Thrusts -->
+            <h2>Heel-Elevated Squat</h2>
+            <input type="hidden" name="ex11" value="heelelevatedsquat">
+            <input type="hidden" name="musc11" value="quad">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w41"></label>
                 <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r41"></label>
@@ -233,13 +233,13 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r43"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w44">
-                <input type="hidden" name="r44">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
-            <h2>Seated Calf Raises</h2>
-            <input type="hidden" name="ex12" value="seatedcalfraises">
-            <input type="hidden" name="musc12" value="calf">
+            <h2>Hip Thrusts</h2>
+            <input type="hidden" name="ex12" value="hipthrusts">
+            <input type="hidden" name="musc12" value="glute">
             <div class="pair">
                 <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w45"></label>
                 <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r45"></label>
@@ -253,29 +253,8 @@
                 <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r47"></label>
             </div>
             <div class="pair">
-                <input type="hidden" name="w48">
-                <input type="hidden" name="r48">
-            </div>
-
-<!-- Heel-Elevated Squat -->            
-            <h2>Heel-Elevated Squat</h2>
-            <input type="hidden" name="ex13" value="heelelevatedsquat">
-            <input type="hidden" name="musc13" value="quad">
-            <div class="pair">
-                <label>Set 1 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w49"></label>
-                <label>Set 1 - Reps: <input class="num-input" type="number" min="0" name="r49"></label>
-            </div>
-            <div class="pair">
-                <label>Set 2 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w50"></label>
-                <label>Set 2 - Reps: <input class="num-input" type="number" min="0" name="r50"></label>
-            </div>
-            <div class="pair">
-                <label>Set 3 - Weight: <input class="num-input" type="number" step="0.1" min="0" name="w51"></label>
-                <label>Set 3 - Reps: <input class="num-input" type="number" min="0" name="r51"></label>
-            </div>
-            <div class="pair">
-                <input type="hidden" name="w52">
-                <input type="hidden" name="r52">
+                <input type="hidden" name="w4">
+                <input type="hidden" name="r4">
             </div>
 
             <button type="submit">Submit</button>
